@@ -1,5 +1,6 @@
 package com.jacolp.task_system.controller;
 
+import com.jacolp.task_system.dto.BuyRequest;
 import com.jacolp.task_system.dto.PageResult;
 import com.jacolp.task_system.dto.InfoResponse;
 import com.jacolp.task_system.entity.Item;
@@ -22,7 +23,7 @@ public class ShopController {
      * @return 商品列表
      */
     @PostMapping("/list")
-    public ResponseEntity<PageResult<Item>> list(Item condition, int pageNum, int pageSize) {
+    public ResponseEntity<PageResult<Item>> list(@RequestBody Item condition, int pageNum, int pageSize) {
         return ResponseEntity.ok(shopService.list(condition, pageNum, pageSize));
     }
 
@@ -38,12 +39,11 @@ public class ShopController {
 
     /**
      * 购买商品
-     * @param itemId 商品 ID
-     * @param playerId 玩家 ID
+     * @param request 带有 商品 ID 和玩家 ID 的请求
      * @return 是否购买成功
      */
     @PostMapping("/buyItem")
-    public ResponseEntity<InfoResponse> buyItem(Long itemId, Long playerId) {
-        return ResponseEntity.ok(shopService.buyItem(itemId, playerId));
+    public ResponseEntity<InfoResponse> buyItem(@RequestBody BuyRequest request) {
+        return ResponseEntity.ok(shopService.buyItem(request.getItemId(), request.getPlayerId()));
     }
 }
