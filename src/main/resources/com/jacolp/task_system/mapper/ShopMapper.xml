@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jacolp.task_system.mapper.ShopMapper">
+    <select id="selectAll">
+        select * from shop_items
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="name != null">
+                and name like concat('%',#{name},'%')
+            </if>
+            <if test="description != null">
+                and description like concat('%',#{description},'%')
+            </if>
+            <if test="costType != null">
+                and cost_type = #{costType}
+            </if>
+            <if test="effectType != null">
+                and effect_type = #{effectType}
+            </if>
+            <if test="stack != null">
+                and stack != 0
+            </if>
+        </where>
+    </select>
+
+
+</mapper>

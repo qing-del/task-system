@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>LifeGame 安全系统测试</title>
+    <style>
+        body { background-color: #1e1e1e; color: #d4d4d4; font-family: 'Consolas', monospace; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .box { border: 1px solid #333; padding: 20px; margin-bottom: 20px; border-radius: 8px; background: #252526; }
+        h2 { color: #61dafb; border-bottom: 1px solid #444; padding-bottom: 10px; }
+        input { background: #3c3c3c; border: 1px solid #555; color: white; padding: 8px; margin-right: 10px; border-radius: 4px; }
+        button { padding: 8px 16px; cursor: pointer; border: none; border-radius: 4px; font-weight: bold; }
+        .btn-reg { background-color: #4caf50; color: white; }
+        .btn-login { background-color: #2196f3; color: white; }
+        .btn-test { background-color: #ff9800; color: white; }
+        #console { background: #000; color: #0f0; padding: 15px; height: 300px; overflow-y: scroll; border: 1px solid #333; font-size: 13px; }
+        .hidden { display: none; }
+        .token-display { word-break: break-all; color: #ffeb3b; font-size: 12px; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🛡️ LifeGame 安全接口测试</h1>
+
+    <div id="auth-box" class="box">
+        <h2>1. 身份认证 (Auth)</h2>
+        <div>
+            <input type="text" id="username" placeholder="用户名" value="player1">
+            <input type="password" id="password" placeholder="密码" value="123456">
+            <button class="btn-reg" onclick="doRegister()">注册</button>
+            <button class="btn-login" onclick="doLogin()">登录 (获取 Token)</button>
+        </div>
+    </div>
+
+    <div id="action-box" class="box hidden">
+        <h2>2. 游戏功能 (需携带 Token)</h2>
+        <p>当前状态：<span style="color:#4caf50">已登录</span></p>
+        <div class="token-display" id="token-show"></div>
+        <br>
+        <button class="btn-test" onclick="testGetStatus()">测试：获取玩家状态 (带 Token)</button>
+        <button class="btn-test" style="background:#f44336" onclick="logout()">退出登录</button>
+    </div>
+
+    <div class="box">
+        <h2>3. 系统日志 (Console)</h2>
+        <div id="console"></div>
+    </div>
+</div>
+
+<script>
+    const API_BASE = 'http://localhost:8080'; // 确保端口号对应你的后端
+    let currentToken = '';
+
+    // 日志打印工具
+    function log(msg, type = 'info') {
+        const consoleDiv = document.getElementById('console');
+        const time = new Date().toLocaleTimeString();
+        const color = type === 'error' ? 'red' : (type === 'success' ? '#4caf50' : '#0f0');
+        consoleDiv.innerHTML += `<div><span style="color:#888">[${time}]</span> <span style="color:${color}">${msg}</span></div>`;
+        consoleDiv.scrollTop = consoleDiv.scrollHeight;
+    }
+
+    // 1. 注册功能
+    async function doRegister() {
+        const u = document.getElementById('username').value;
+        const p = document.getElementById('password').value;
+
+        log(`正在注册用户: ${u}...`);
+
+        try {
+            const res = await fetch(`${API_BASE}/api/auth/register`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username: u, password: p })
+            });
+
+            const text = await res.text();
+            if (res.ok) {
+                log(`✅ 注册成功: ${text}`, 'success');
+            } else {
+                log(`❌ 注册失败: ${text}`, 'error');
+            }
+        } catch (e) {
+            log(`❌ 请求错误: ${e.message}`, 'error');
+        }
+    }
+
+    // 2. 登录功能
+    async function doLogin() {
+        const u = document.getElementById('username').value;
+        const p = document.getElementById('password').value;
+
+        log(`正在尝试登录: ${u}...`);
+
+        try {
+            const res = await fetch(`${API_BASE}/api/auth/login`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username: u, password: p })
+            });
+
+            if (res.ok) {
+                const data = await res.json();
+                currentToken = data.token; // 拿到 Token！
+
+                log(`✅ 登录成功!`, 'success');
+                log(`🔑 Token: ${currentToken.substring(0, 20)}... (已保存)`);
+
+                // 切换界面
+                document.getElementById('auth-box').classList.add('hidden');
+                document.getElementById('action-box').classList.remove('hidden');
+                document.getElementById('token-show').innerText = "当前 Token: " + currentToken;
+            } else {
+                log(`❌ 登录失败 (状态码: ${res.status})`, 'error');
+            }
+        } catch (e) {
+            log(`❌ 请求错误: ${e.message}`, 'error');
+        }
+    }
+
+    // 3. 测试受保护的接口
+    async function testGetStatus() {
+        // 这里假设数据库里已经有 id=1 的玩家数据
+        // 如果没有，你需要先去数据库插一条 insert into player_status...
+        const playerId = 1;
+
+        log(`正在请求受保护资源: /task/status...`);
+
+        try {
+            // 由于后端采用了 Jwt 令牌技术 只看 Token 所以这里不需要上传 玩家id 了
+            //const res = await fetch(`${API_BASE}/task/status?playerId=${playerId}`
+            const res = await fetch(`${API_BASE}/task/status`
+                , {
+                method: 'GET',
+                headers: {
+                    // 🔥 核心：必须要在请求头里带上 "Bearer " + token
+                    'Authorization': 'Bearer ' + currentToken
+                }
+            });
+
+            if (res.ok) {
+                const data = await res.json();
+                log(`✅ 验证通过! 获取到数据:`, 'success');
+                log(JSON.stringify(data, null, 2));
+            } else if (res.status === 403) {
+                log(`⛔ 403 Forbidden - 你的 Token 无效或过期了！`, 'error');
+            } else {
+                log(`❌ 请求失败: ${res.status}`, 'error');
+            }
+        } catch (e) {
+            log(`❌ 网络错误: ${e.message}`, 'error');
+        }
+    }
+
+    function logout() {
+        currentToken = '';
+        document.getElementById('auth-box').classList.remove('hidden');
+        document.getElementById('action-box').classList.add('hidden');
+        log('已退出登录');
+    }
+</script>
+
+</body>
+</html>

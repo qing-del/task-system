@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>AI 进化系统 - 控制台</title>
+    <style>
+        :root { --primary: #2c3e50; --accent: #3498db; --success: #27ae60; --bg: #f5f6fa; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); color: var(--primary); padding: 20px; max-width: 800px; margin: 0 auto; }
+
+        /* 布局容器 */
+        .container { display: grid; gap: 20px; }
+        .card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+
+        /* 状态面板 */
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; text-align: center; }
+        .stat-item h3 { font-size: 2em; margin: 0; color: var(--accent); }
+        .stat-item p { margin: 5px 0 0; color: #7f8c8d; font-size: 0.9em; }
+
+        /* 经验条 */
+        .exp-bar-bg { background: #eee; height: 10px; border-radius: 5px; margin-top: 15px; overflow: hidden; }
+        .exp-bar-fill { background: linear-gradient(90deg, #f1c40f, #e67e22); height: 100%; width: 0%; transition: width 0.5s ease; }
+
+        /* 按钮 */
+        .btn-ai { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; width: 100%; padding: 15px; border: none; border-radius: 8px; font-size: 1.1em; cursor: pointer; transition: transform 0.1s; }
+        .btn-ai:active { transform: scale(0.98); }
+        .btn-ai:disabled { opacity: 0.7; cursor: wait; }
+
+        /* 任务卡片 */
+        .task-card { border-left: 5px solid var(--accent); background: #fff; padding: 15px; margin-top: 15px; animation: slideIn 0.3s ease; display: flex; justify-content: space-between; align-items: center; }
+        .task-info h4 { margin: 0 0 5px 0; }
+        .task-reward { font-size: 0.85em; color: #e67e22; background: #fff3cd; padding: 2px 8px; border-radius: 4px; }
+        .btn-complete { background: var(--success); color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; }
+
+        @keyframes slideIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3 id="level">1</h3>
+                <p>等级 (Level)</p>
+            </div>
+            <div class="stat-item">
+                <h3 id="spirit">0</h3>
+                <p>精神 (Spirit)</p>
+            </div>
+            <div class="stat-item">
+                <h3 id="body">0</h3>
+                <p>肉体 (Body)</p>
+            </div>
+            <div class="stat-item">
+                <h3 id="points">0</h3>
+                <p>总经验 (Total)</p>
+            </div>
+        </div>
+        <div class="exp-bar-bg">
+            <div id="expBar" class="exp-bar-fill"></div>
+        </div>
+        <p style="text-align: right; font-size: 0.8em; color: #999; margin-top: 5px;">
+            当前经验: <span id="curExp">0</span> / <span id="maxExp">100</span>
+        </p>
+    </div>
+
+    <div class="card">
+        <button class="btn-ai" onclick="generateAiTask()" id="aiBtn">
+            ✨ 召唤 AI 生成新任务
+        </button>
+    </div>
+
+    <div id="taskList">
+    </div>
+</div>
+
+<script>
+    const BASE_URL = 'http://localhost:8080/task';
+    const PLAYER_ID = 1; // 默认测试玩家ID
+
+    // 初始化加载
+    window.onload = refreshStatus;
+
+    // --- 核心功能 1: 刷新状态 ---
+    async function refreshStatus() {
+        try {
+            const res = await fetch(`${BASE_URL}/status?playerId=${PLAYER_ID}`);
+            const p = await res.json();
+
+            // 更新数字
+            document.getElementById('level').innerText = p.level;
+            document.getElementById('spirit').innerText = p.spirit;
+            document.getElementById('body').innerText = p.body;
+            document.getElementById('points').innerText = p.totalExp;
+            document.getElementById('curExp').innerText = p.currentExp;
+            document.getElementById('maxExp').innerText = p.totalExp; // 注意：你代码里 totalExp 实际上是升级门槛
+
+            // 更新经验条
+            const percent = Math.min((p.currentExp / p.totalExp) * 100, 100);
+            document.getElementById('expBar').style.width = `${percent}%`;
+        } catch (e) {
+            console.error("加载状态失败:", e);
+        }
+    }
+
+    // --- 核心功能 2: AI 生成任务 ---
+    async function generateAiTask() {
+        const btn = document.getElementById('aiBtn');
+        btn.disabled = true;
+        btn.innerText = "🤖 AI 正在思考中... (这可能需要几秒)";
+
+        try {
+            const res = await fetch(`${BASE_URL}/generate?playerId=${PLAYER_ID}`, { method: 'POST' });
+            if (!res.ok) throw new Error("生成失败");
+
+            const task = await res.json();
+            renderTask(task); // 把任务画在页面上
+        } catch (e) {
+            alert("AI 似乎开小差了，请检查后端控制台日志");
+        } finally {
+            btn.disabled = false;
+            btn.innerText = "✨ 召唤 AI 生成新任务";
+        }
+    }
+
+    // --- 核心功能 3: 完成任务 ---
+    async function completeTask(taskId, btnElement) {
+        try {
+            const res = await fetch(`${BASE_URL}/complete?playerId=${PLAYER_ID}&taskId=${taskId}`, { method: 'POST' });
+            const updatedPlayer = await res.json();
+
+            // 1. 刷新上面的玩家面板
+            refreshStatus();
+
+            // 2. 移除这个任务卡片
+            const card = btnElement.closest('.task-card');
+            card.style.opacity = '0';
+            setTimeout(() => card.remove(), 300);
+
+            // 3. 简单的升级特效提示
+            if (updatedPlayer.level > parseInt(document.getElementById('level').innerText)) {
+                alert("🎉 恭喜升级！Level Up!");
+            }
+        } catch (e) {
+            alert("结算失败");
+        }
+    }
+
+    // 辅助工具：把任务数据变成 HTML
+    function renderTask(task) {
+        const list = document.getElementById('taskList');
+        const rewardText = task.rewardType === 0 ? `精神 +${task.reward}` : `肉体 +${task.reward}`;
+
+        const html = `
+                <div class="task-card">
+                    <div class="task-info">
+                        <h4>${task.title}</h4>
+                        <div style="font-size: 0.9em; color: #666; margin-bottom: 5px;">${task.description}</div>
+                        <span class="task-reward">EXP +${task.expReward}</span>
+                        <span class="task-reward">${rewardText}</span>
+                    </div>
+                    <button class="btn-complete" onclick="completeTask(${task.id}, this)">✅ 完成</button>
+                </div>
+            `;
+        // 插入到列表最前面
+        list.insertAdjacentHTML('afterbegin', html);
+    }
+</script>
+</body>
+</html>

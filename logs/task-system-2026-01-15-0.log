@@ -1,0 +1,708 @@
+2026-01-15 03:23:15.172 [main] INFO  com.jacolp.task_system.TaskSystemApplication - Starting TaskSystemApplication using Java 17.0.12 with PID 11108 (E:\JavaProject\task-system\target\classes started by q1244 in E:\JavaProject\task-system)
+2026-01-15 03:23:15.173 [main] DEBUG com.jacolp.task_system.TaskSystemApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2026-01-15 03:23:15.174 [main] INFO  com.jacolp.task_system.TaskSystemApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-15 03:23:15.880 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-01-15 03:23:15.888 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-15 03:23:15.890 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-15 03:23:15.891 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-01-15 03:23:15.933 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-15 03:23:15.933 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 725 ms
+2026-01-15 03:23:16.034 [main] DEBUG c.j.task_system.filter.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-01-15 03:23:16.067 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-01-15 03:23:16.067 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2026-01-15 03:23:16.240 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-01-15 03:23:16.458 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-15 03:23:16.468 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-01-15 03:23:16.473 [main] INFO  com.jacolp.task_system.TaskSystemApplication - Started TaskSystemApplication in 1.553 seconds (process running for 2.77)
+2026-01-15 03:23:28.081 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-15 03:23:28.081 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-01-15 03:23:28.082 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-01-15 03:23:28.115 [http-nio-8080-exec-3] WARN  c.j.task_system.filter.JwtAuthenticationFilter - 请求头不合法导致异常！
+2026-01-15 03:23:28.235 [http-nio-8080-exec-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-15 03:23:28.256 [http-nio-8080-exec-3] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@43ccaa4a
+2026-01-15 03:23:28.258 [http-nio-8080-exec-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-15 03:23:28.262 [http-nio-8080-exec-3] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 03:23:28.274 [http-nio-8080-exec-3] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 03:23:28.288 [http-nio-8080-exec-3] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 03:23:28.289 [http-nio-8080-exec-3] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 03:23:28.290 [http-nio-8080-exec-3] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 03:23:28.347 [http-nio-8080-exec-3] INFO  com.jacolp.task_system.controller.AuthController - 用户登录成功！
+2026-01-15 03:23:28.523 [http-nio-8080-exec-5] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 03:23:28.524 [http-nio-8080-exec-5] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 03:23:28.524 [http-nio-8080-exec-5] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 03:23:28.524 [http-nio-8080-exec-5] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 03:23:28.525 [http-nio-8080-exec-5] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 03:23:28.528 [http-nio-8080-exec-5] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 03:23:28.528 [http-nio-8080-exec-5] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 03:23:28.529 [http-nio-8080-exec-5] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 03:23:28.529 [http-nio-8080-exec-5] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 03:23:28.529 [http-nio-8080-exec-5] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 03:23:28.530 [http-nio-8080-exec-5] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==>  Preparing: select * from player_status where user_id=?
+2026-01-15 03:23:28.530 [http-nio-8080-exec-5] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==> Parameters: 1(Long)
+2026-01-15 03:23:28.531 [http-nio-8080-exec-5] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==    Columns: id, spirit, body, current_exp, total_exp, level, update_time, user_id, coin
+2026-01-15 03:23:28.531 [http-nio-8080-exec-5] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==        Row: 1, 2, 6, 95, 250, 3, 2026-01-14 14:31:27, 1, 30
+2026-01-15 03:23:28.532 [http-nio-8080-exec-5] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==      Total: 1
+2026-01-15 03:23:28.549 [http-nio-8080-exec-6] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 03:23:28.549 [http-nio-8080-exec-6] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 03:23:28.550 [http-nio-8080-exec-6] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 03:23:28.550 [http-nio-8080-exec-6] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 03:23:28.550 [http-nio-8080-exec-6] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 03:23:28.561 [http-nio-8080-exec-6] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 03:23:28.562 [http-nio-8080-exec-6] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 03:23:28.562 [http-nio-8080-exec-6] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 03:23:28.562 [http-nio-8080-exec-6] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 03:23:28.563 [http-nio-8080-exec-6] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 03:23:28.563 [http-nio-8080-exec-6] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==>  Preparing: select * from player_status where user_id=?
+2026-01-15 03:23:28.563 [http-nio-8080-exec-6] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==> Parameters: 1(Long)
+2026-01-15 03:23:28.564 [http-nio-8080-exec-6] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==    Columns: id, spirit, body, current_exp, total_exp, level, update_time, user_id, coin
+2026-01-15 03:23:28.564 [http-nio-8080-exec-6] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==        Row: 1, 2, 6, 95, 250, 3, 2026-01-14 14:31:27, 1, 30
+2026-01-15 03:23:28.564 [http-nio-8080-exec-6] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==      Total: 1
+2026-01-15 03:23:28.616 [http-nio-8080-exec-6] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - ==>  Preparing: SELECT count(0) FROM task WHERE user_id = ?
+2026-01-15 03:23:28.616 [http-nio-8080-exec-6] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - ==> Parameters: 1(Long)
+2026-01-15 03:23:28.618 [http-nio-8080-exec-6] TRACE c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==    Columns: count(0)
+2026-01-15 03:23:28.618 [http-nio-8080-exec-6] TRACE c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==        Row: 3
+2026-01-15 03:23:28.619 [http-nio-8080-exec-6] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==      Total: 1
+2026-01-15 03:23:28.621 [http-nio-8080-exec-6] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - ==>  Preparing: select * from task WHERE user_id = ? order by create_time desc LIMIT ?
+2026-01-15 03:23:28.621 [http-nio-8080-exec-6] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - ==> Parameters: 1(Long), 5(Integer)
+2026-01-15 03:23:28.623 [http-nio-8080-exec-6] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==    Columns: id, title, description, exp_reward, reward_type, reward, status, create_time, user_id, coin_reward
+2026-01-15 03:23:28.623 [http-nio-8080-exec-6] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==        Row: 3, 购买测试, <<BLOB>>, 20, 0, 0, 1, 2026-01-14 14:25:41, 1, 0
+2026-01-15 03:23:28.623 [http-nio-8080-exec-6] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==        Row: 2, 创建测试, <<BLOB>>, 10, 0, 1, 1, 2026-01-14 01:37:59, 1, 0
+2026-01-15 03:23:28.624 [http-nio-8080-exec-6] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==        Row: 1, 深蹲测试, <<BLOB>>, 30, 1, 5, 1, 2025-12-24 17:24:06, 1, 0
+2026-01-15 03:23:28.624 [http-nio-8080-exec-6] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - <==      Total: 3
+2026-01-15 03:26:39.137 [http-nio-8080-exec-9] WARN  c.j.task_system.filter.JwtAuthenticationFilter - 请求头不合法导致异常！
+2026-01-15 03:26:39.140 [http-nio-8080-exec-9] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 03:26:39.140 [http-nio-8080-exec-9] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 03:26:39.142 [http-nio-8080-exec-9] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 03:26:39.142 [http-nio-8080-exec-9] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 03:26:39.143 [http-nio-8080-exec-9] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 03:26:39.215 [http-nio-8080-exec-9] INFO  com.jacolp.task_system.controller.AuthController - 用户登录成功！
+2026-01-15 03:26:39.341 [http-nio-8080-exec-1] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 03:26:39.341 [http-nio-8080-exec-1] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 03:26:39.342 [http-nio-8080-exec-1] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 03:26:39.342 [http-nio-8080-exec-1] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 03:26:39.342 [http-nio-8080-exec-1] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 03:26:39.344 [http-nio-8080-exec-1] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 03:26:39.344 [http-nio-8080-exec-1] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 03:26:39.345 [http-nio-8080-exec-1] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 03:26:39.346 [http-nio-8080-exec-1] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 03:26:39.346 [http-nio-8080-exec-1] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 03:26:39.346 [http-nio-8080-exec-1] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==>  Preparing: select * from player_status where user_id=?
+2026-01-15 03:26:39.347 [http-nio-8080-exec-1] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==> Parameters: 1(Long)
+2026-01-15 03:26:39.348 [http-nio-8080-exec-1] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==    Columns: id, spirit, body, current_exp, total_exp, level, update_time, user_id, coin
+2026-01-15 03:26:39.348 [http-nio-8080-exec-1] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==        Row: 1, 2, 6, 95, 250, 3, 2026-01-14 14:31:27, 1, 30
+2026-01-15 03:26:39.349 [http-nio-8080-exec-1] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==      Total: 1
+2026-01-15 03:26:39.383 [http-nio-8080-exec-2] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 03:26:39.384 [http-nio-8080-exec-2] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 03:26:39.385 [http-nio-8080-exec-2] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 03:26:39.385 [http-nio-8080-exec-2] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 03:26:39.386 [http-nio-8080-exec-2] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 03:26:39.390 [http-nio-8080-exec-2] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 03:26:39.390 [http-nio-8080-exec-2] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 03:26:39.393 [http-nio-8080-exec-2] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 03:26:39.393 [http-nio-8080-exec-2] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 03:26:39.393 [http-nio-8080-exec-2] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 03:26:39.393 [http-nio-8080-exec-2] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==>  Preparing: select * from player_status where user_id=?
+2026-01-15 03:26:39.393 [http-nio-8080-exec-2] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==> Parameters: 1(Long)
+2026-01-15 03:26:39.394 [http-nio-8080-exec-2] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==    Columns: id, spirit, body, current_exp, total_exp, level, update_time, user_id, coin
+2026-01-15 03:26:39.394 [http-nio-8080-exec-2] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==        Row: 1, 2, 6, 95, 250, 3, 2026-01-14 14:31:27, 1, 30
+2026-01-15 03:26:39.396 [http-nio-8080-exec-2] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==      Total: 1
+2026-01-15 03:26:39.398 [http-nio-8080-exec-2] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - ==>  Preparing: SELECT count(0) FROM task WHERE user_id = ?
+2026-01-15 03:26:39.398 [http-nio-8080-exec-2] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - ==> Parameters: 1(Long)
+2026-01-15 03:26:39.398 [http-nio-8080-exec-2] TRACE c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==    Columns: count(0)
+2026-01-15 03:26:39.398 [http-nio-8080-exec-2] TRACE c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==        Row: 3
+2026-01-15 03:26:39.399 [http-nio-8080-exec-2] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==      Total: 1
+2026-01-15 03:26:39.399 [http-nio-8080-exec-2] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - ==>  Preparing: select * from task WHERE user_id = ? order by create_time desc LIMIT ?
+2026-01-15 03:26:39.399 [http-nio-8080-exec-2] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - ==> Parameters: 1(Long), 5(Integer)
+2026-01-15 03:26:39.399 [http-nio-8080-exec-2] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==    Columns: id, title, description, exp_reward, reward_type, reward, status, create_time, user_id, coin_reward
+2026-01-15 03:26:39.400 [http-nio-8080-exec-2] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==        Row: 3, 购买测试, <<BLOB>>, 20, 0, 0, 1, 2026-01-14 14:25:41, 1, 0
+2026-01-15 03:26:39.400 [http-nio-8080-exec-2] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==        Row: 2, 创建测试, <<BLOB>>, 10, 0, 1, 1, 2026-01-14 01:37:59, 1, 0
+2026-01-15 03:26:39.400 [http-nio-8080-exec-2] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==        Row: 1, 深蹲测试, <<BLOB>>, 30, 1, 5, 1, 2025-12-24 17:24:06, 1, 0
+2026-01-15 03:26:39.400 [http-nio-8080-exec-2] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - <==      Total: 3
+2026-01-15 04:06:47.309 [http-nio-8080-exec-6] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:06:47.309 [http-nio-8080-exec-6] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:06:47.310 [http-nio-8080-exec-6] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:06:47.311 [http-nio-8080-exec-6] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:06:47.311 [http-nio-8080-exec-6] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:06:47.316 [http-nio-8080-exec-6] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:06:47.316 [http-nio-8080-exec-6] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:06:47.317 [http-nio-8080-exec-6] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:06:47.317 [http-nio-8080-exec-6] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:06:47.318 [http-nio-8080-exec-6] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:06:47.318 [http-nio-8080-exec-6] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==>  Preparing: select * from player_status where user_id=?
+2026-01-15 04:06:47.318 [http-nio-8080-exec-6] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==> Parameters: 1(Long)
+2026-01-15 04:06:47.319 [http-nio-8080-exec-6] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==    Columns: id, spirit, body, current_exp, total_exp, level, update_time, user_id, coin
+2026-01-15 04:06:47.319 [http-nio-8080-exec-6] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==        Row: 1, 2, 6, 95, 250, 3, 2026-01-14 14:31:27, 1, 30
+2026-01-15 04:06:47.320 [http-nio-8080-exec-6] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==      Total: 1
+2026-01-15 04:06:47.338 [http-nio-8080-exec-8] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:06:47.338 [http-nio-8080-exec-8] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:06:47.339 [http-nio-8080-exec-8] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:06:47.340 [http-nio-8080-exec-8] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:06:47.340 [http-nio-8080-exec-8] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:06:47.344 [http-nio-8080-exec-8] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:06:47.344 [http-nio-8080-exec-8] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:06:47.345 [http-nio-8080-exec-8] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:06:47.345 [http-nio-8080-exec-8] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:06:47.345 [http-nio-8080-exec-8] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:06:47.346 [http-nio-8080-exec-8] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==>  Preparing: select * from player_status where user_id=?
+2026-01-15 04:06:47.346 [http-nio-8080-exec-8] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==> Parameters: 1(Long)
+2026-01-15 04:06:47.347 [http-nio-8080-exec-8] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==    Columns: id, spirit, body, current_exp, total_exp, level, update_time, user_id, coin
+2026-01-15 04:06:47.347 [http-nio-8080-exec-8] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==        Row: 1, 2, 6, 95, 250, 3, 2026-01-14 14:31:27, 1, 30
+2026-01-15 04:06:47.347 [http-nio-8080-exec-8] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==      Total: 1
+2026-01-15 04:06:47.349 [http-nio-8080-exec-8] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - ==>  Preparing: SELECT count(0) FROM task WHERE user_id = ?
+2026-01-15 04:06:47.350 [http-nio-8080-exec-8] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - ==> Parameters: 1(Long)
+2026-01-15 04:06:47.351 [http-nio-8080-exec-8] TRACE c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==    Columns: count(0)
+2026-01-15 04:06:47.351 [http-nio-8080-exec-8] TRACE c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==        Row: 3
+2026-01-15 04:06:47.351 [http-nio-8080-exec-8] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==      Total: 1
+2026-01-15 04:06:47.351 [http-nio-8080-exec-8] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - ==>  Preparing: select * from task WHERE user_id = ? order by create_time desc LIMIT ?
+2026-01-15 04:06:47.352 [http-nio-8080-exec-8] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - ==> Parameters: 1(Long), 5(Integer)
+2026-01-15 04:06:47.353 [http-nio-8080-exec-8] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==    Columns: id, title, description, exp_reward, reward_type, reward, status, create_time, user_id, coin_reward
+2026-01-15 04:06:47.353 [http-nio-8080-exec-8] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==        Row: 3, 购买测试, <<BLOB>>, 20, 0, 0, 1, 2026-01-14 14:25:41, 1, 0
+2026-01-15 04:06:47.353 [http-nio-8080-exec-8] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==        Row: 2, 创建测试, <<BLOB>>, 10, 0, 1, 1, 2026-01-14 01:37:59, 1, 0
+2026-01-15 04:06:47.355 [http-nio-8080-exec-8] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==        Row: 1, 深蹲测试, <<BLOB>>, 30, 1, 5, 1, 2025-12-24 17:24:06, 1, 0
+2026-01-15 04:06:47.355 [http-nio-8080-exec-8] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - <==      Total: 3
+2026-01-15 04:06:49.289 [http-nio-8080-exec-9] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:06:49.290 [http-nio-8080-exec-9] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:06:49.291 [http-nio-8080-exec-9] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:06:49.292 [http-nio-8080-exec-9] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:06:49.292 [http-nio-8080-exec-9] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:06:49.294 [http-nio-8080-exec-9] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:06:49.295 [http-nio-8080-exec-9] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:06:49.296 [http-nio-8080-exec-9] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:06:49.297 [http-nio-8080-exec-9] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:06:49.298 [http-nio-8080-exec-9] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:06:49.298 [http-nio-8080-exec-9] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==>  Preparing: select * from player_status where user_id=?
+2026-01-15 04:06:49.298 [http-nio-8080-exec-9] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==> Parameters: 1(Long)
+2026-01-15 04:06:49.299 [http-nio-8080-exec-9] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==    Columns: id, spirit, body, current_exp, total_exp, level, update_time, user_id, coin
+2026-01-15 04:06:49.300 [http-nio-8080-exec-9] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==        Row: 1, 2, 6, 95, 250, 3, 2026-01-14 14:31:27, 1, 30
+2026-01-15 04:06:49.300 [http-nio-8080-exec-9] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==      Total: 1
+2026-01-15 04:06:49.312 [http-nio-8080-exec-10] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:06:49.312 [http-nio-8080-exec-10] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:06:49.312 [http-nio-8080-exec-10] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:06:49.314 [http-nio-8080-exec-10] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:06:49.314 [http-nio-8080-exec-10] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:06:49.320 [http-nio-8080-exec-10] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:06:49.320 [http-nio-8080-exec-10] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:06:49.321 [http-nio-8080-exec-10] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:06:49.322 [http-nio-8080-exec-10] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:06:49.322 [http-nio-8080-exec-10] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:06:49.322 [http-nio-8080-exec-10] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==>  Preparing: select * from player_status where user_id=?
+2026-01-15 04:06:49.322 [http-nio-8080-exec-10] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==> Parameters: 1(Long)
+2026-01-15 04:06:49.324 [http-nio-8080-exec-10] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==    Columns: id, spirit, body, current_exp, total_exp, level, update_time, user_id, coin
+2026-01-15 04:06:49.324 [http-nio-8080-exec-10] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==        Row: 1, 2, 6, 95, 250, 3, 2026-01-14 14:31:27, 1, 30
+2026-01-15 04:06:49.324 [http-nio-8080-exec-10] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==      Total: 1
+2026-01-15 04:06:49.327 [http-nio-8080-exec-10] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - ==>  Preparing: SELECT count(0) FROM task WHERE user_id = ?
+2026-01-15 04:06:49.328 [http-nio-8080-exec-10] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - ==> Parameters: 1(Long)
+2026-01-15 04:06:49.328 [http-nio-8080-exec-10] TRACE c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==    Columns: count(0)
+2026-01-15 04:06:49.328 [http-nio-8080-exec-10] TRACE c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==        Row: 3
+2026-01-15 04:06:49.328 [http-nio-8080-exec-10] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==      Total: 1
+2026-01-15 04:06:49.329 [http-nio-8080-exec-10] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - ==>  Preparing: select * from task WHERE user_id = ? order by create_time desc LIMIT ?
+2026-01-15 04:06:49.330 [http-nio-8080-exec-10] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - ==> Parameters: 1(Long), 5(Integer)
+2026-01-15 04:06:49.330 [http-nio-8080-exec-10] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==    Columns: id, title, description, exp_reward, reward_type, reward, status, create_time, user_id, coin_reward
+2026-01-15 04:06:49.331 [http-nio-8080-exec-10] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==        Row: 3, 购买测试, <<BLOB>>, 20, 0, 0, 1, 2026-01-14 14:25:41, 1, 0
+2026-01-15 04:06:49.331 [http-nio-8080-exec-10] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==        Row: 2, 创建测试, <<BLOB>>, 10, 0, 1, 1, 2026-01-14 01:37:59, 1, 0
+2026-01-15 04:06:49.334 [http-nio-8080-exec-10] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==        Row: 1, 深蹲测试, <<BLOB>>, 30, 1, 5, 1, 2025-12-24 17:24:06, 1, 0
+2026-01-15 04:06:49.335 [http-nio-8080-exec-10] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - <==      Total: 3
+2026-01-15 04:06:50.354 [http-nio-8080-exec-1] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:06:50.355 [http-nio-8080-exec-1] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:06:50.356 [http-nio-8080-exec-1] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:06:50.356 [http-nio-8080-exec-1] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:06:50.357 [http-nio-8080-exec-1] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:06:50.361 [http-nio-8080-exec-1] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:06:50.361 [http-nio-8080-exec-1] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:06:50.363 [http-nio-8080-exec-1] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:06:50.363 [http-nio-8080-exec-1] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:06:50.363 [http-nio-8080-exec-1] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:06:50.364 [http-nio-8080-exec-1] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==>  Preparing: select * from player_status where user_id=?
+2026-01-15 04:06:50.364 [http-nio-8080-exec-1] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==> Parameters: 1(Long)
+2026-01-15 04:06:50.365 [http-nio-8080-exec-1] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==    Columns: id, spirit, body, current_exp, total_exp, level, update_time, user_id, coin
+2026-01-15 04:06:50.365 [http-nio-8080-exec-1] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==        Row: 1, 2, 6, 95, 250, 3, 2026-01-14 14:31:27, 1, 30
+2026-01-15 04:06:50.365 [http-nio-8080-exec-1] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==      Total: 1
+2026-01-15 04:06:50.378 [http-nio-8080-exec-3] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:06:50.379 [http-nio-8080-exec-3] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:06:50.379 [http-nio-8080-exec-3] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:06:50.380 [http-nio-8080-exec-3] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:06:50.380 [http-nio-8080-exec-3] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:06:50.384 [http-nio-8080-exec-3] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:06:50.385 [http-nio-8080-exec-3] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:06:50.386 [http-nio-8080-exec-3] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:06:50.386 [http-nio-8080-exec-3] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:06:50.386 [http-nio-8080-exec-3] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:06:50.387 [http-nio-8080-exec-3] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==>  Preparing: select * from player_status where user_id=?
+2026-01-15 04:06:50.387 [http-nio-8080-exec-3] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==> Parameters: 1(Long)
+2026-01-15 04:06:50.387 [http-nio-8080-exec-3] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==    Columns: id, spirit, body, current_exp, total_exp, level, update_time, user_id, coin
+2026-01-15 04:06:50.387 [http-nio-8080-exec-3] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==        Row: 1, 2, 6, 95, 250, 3, 2026-01-14 14:31:27, 1, 30
+2026-01-15 04:06:50.387 [http-nio-8080-exec-3] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==      Total: 1
+2026-01-15 04:06:50.392 [http-nio-8080-exec-3] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - ==>  Preparing: SELECT count(0) FROM task WHERE user_id = ?
+2026-01-15 04:06:50.392 [http-nio-8080-exec-3] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - ==> Parameters: 1(Long)
+2026-01-15 04:06:50.393 [http-nio-8080-exec-3] TRACE c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==    Columns: count(0)
+2026-01-15 04:06:50.394 [http-nio-8080-exec-3] TRACE c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==        Row: 3
+2026-01-15 04:06:50.394 [http-nio-8080-exec-3] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==      Total: 1
+2026-01-15 04:06:50.394 [http-nio-8080-exec-3] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - ==>  Preparing: select * from task WHERE user_id = ? order by create_time desc LIMIT ?
+2026-01-15 04:06:50.394 [http-nio-8080-exec-3] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - ==> Parameters: 1(Long), 5(Integer)
+2026-01-15 04:06:50.395 [http-nio-8080-exec-3] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==    Columns: id, title, description, exp_reward, reward_type, reward, status, create_time, user_id, coin_reward
+2026-01-15 04:06:50.395 [http-nio-8080-exec-3] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==        Row: 3, 购买测试, <<BLOB>>, 20, 0, 0, 1, 2026-01-14 14:25:41, 1, 0
+2026-01-15 04:06:50.396 [http-nio-8080-exec-3] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==        Row: 2, 创建测试, <<BLOB>>, 10, 0, 1, 1, 2026-01-14 01:37:59, 1, 0
+2026-01-15 04:06:50.397 [http-nio-8080-exec-3] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==        Row: 1, 深蹲测试, <<BLOB>>, 30, 1, 5, 1, 2025-12-24 17:24:06, 1, 0
+2026-01-15 04:06:50.397 [http-nio-8080-exec-3] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - <==      Total: 3
+2026-01-15 04:07:24.839 [http-nio-8080-exec-5] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:07:24.839 [http-nio-8080-exec-5] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:07:24.840 [http-nio-8080-exec-5] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:07:24.841 [http-nio-8080-exec-5] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:07:24.841 [http-nio-8080-exec-5] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:07:24.844 [http-nio-8080-exec-5] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:07:24.844 [http-nio-8080-exec-5] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:07:24.845 [http-nio-8080-exec-5] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:07:24.845 [http-nio-8080-exec-5] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:07:24.845 [http-nio-8080-exec-5] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:07:24.845 [http-nio-8080-exec-5] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==>  Preparing: select * from player_status where user_id=?
+2026-01-15 04:07:24.846 [http-nio-8080-exec-5] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==> Parameters: 1(Long)
+2026-01-15 04:07:24.846 [http-nio-8080-exec-5] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==    Columns: id, spirit, body, current_exp, total_exp, level, update_time, user_id, coin
+2026-01-15 04:07:24.846 [http-nio-8080-exec-5] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==        Row: 1, 2, 6, 95, 250, 3, 2026-01-14 14:31:27, 1, 30
+2026-01-15 04:07:24.847 [http-nio-8080-exec-5] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==      Total: 1
+2026-01-15 04:07:24.863 [http-nio-8080-exec-6] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:07:24.863 [http-nio-8080-exec-6] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:07:24.864 [http-nio-8080-exec-6] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:07:24.864 [http-nio-8080-exec-6] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:07:24.864 [http-nio-8080-exec-6] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:07:24.868 [http-nio-8080-exec-6] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:07:24.868 [http-nio-8080-exec-6] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:07:24.868 [http-nio-8080-exec-6] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:07:24.868 [http-nio-8080-exec-6] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:07:24.869 [http-nio-8080-exec-6] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:07:24.869 [http-nio-8080-exec-6] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==>  Preparing: select * from player_status where user_id=?
+2026-01-15 04:07:24.869 [http-nio-8080-exec-6] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==> Parameters: 1(Long)
+2026-01-15 04:07:24.870 [http-nio-8080-exec-6] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==    Columns: id, spirit, body, current_exp, total_exp, level, update_time, user_id, coin
+2026-01-15 04:07:24.870 [http-nio-8080-exec-6] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==        Row: 1, 2, 6, 95, 250, 3, 2026-01-14 14:31:27, 1, 30
+2026-01-15 04:07:24.870 [http-nio-8080-exec-6] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==      Total: 1
+2026-01-15 04:07:24.872 [http-nio-8080-exec-6] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - ==>  Preparing: SELECT count(0) FROM task WHERE user_id = ?
+2026-01-15 04:07:24.873 [http-nio-8080-exec-6] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - ==> Parameters: 1(Long)
+2026-01-15 04:07:24.873 [http-nio-8080-exec-6] TRACE c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==    Columns: count(0)
+2026-01-15 04:07:24.873 [http-nio-8080-exec-6] TRACE c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==        Row: 3
+2026-01-15 04:07:24.873 [http-nio-8080-exec-6] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==      Total: 1
+2026-01-15 04:07:24.874 [http-nio-8080-exec-6] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - ==>  Preparing: select * from task WHERE user_id = ? order by create_time desc LIMIT ?
+2026-01-15 04:07:24.874 [http-nio-8080-exec-6] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - ==> Parameters: 1(Long), 5(Integer)
+2026-01-15 04:07:24.874 [http-nio-8080-exec-6] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==    Columns: id, title, description, exp_reward, reward_type, reward, status, create_time, user_id, coin_reward
+2026-01-15 04:07:24.875 [http-nio-8080-exec-6] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==        Row: 3, 购买测试, <<BLOB>>, 20, 0, 0, 1, 2026-01-14 14:25:41, 1, 0
+2026-01-15 04:07:24.877 [http-nio-8080-exec-6] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==        Row: 2, 创建测试, <<BLOB>>, 10, 0, 1, 1, 2026-01-14 01:37:59, 1, 0
+2026-01-15 04:07:24.877 [http-nio-8080-exec-6] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==        Row: 1, 深蹲测试, <<BLOB>>, 30, 1, 5, 1, 2025-12-24 17:24:06, 1, 0
+2026-01-15 04:07:24.877 [http-nio-8080-exec-6] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - <==      Total: 3
+2026-01-15 04:07:26.604 [http-nio-8080-exec-7] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:07:26.604 [http-nio-8080-exec-7] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:07:26.605 [http-nio-8080-exec-7] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:07:26.605 [http-nio-8080-exec-7] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:07:26.605 [http-nio-8080-exec-7] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:07:26.609 [http-nio-8080-exec-7] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:07:26.610 [http-nio-8080-exec-7] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:07:26.611 [http-nio-8080-exec-7] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:07:26.611 [http-nio-8080-exec-7] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:07:26.611 [http-nio-8080-exec-7] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:07:26.612 [http-nio-8080-exec-7] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==>  Preparing: select * from player_status where user_id=?
+2026-01-15 04:07:26.612 [http-nio-8080-exec-7] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==> Parameters: 1(Long)
+2026-01-15 04:07:26.613 [http-nio-8080-exec-7] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==    Columns: id, spirit, body, current_exp, total_exp, level, update_time, user_id, coin
+2026-01-15 04:07:26.613 [http-nio-8080-exec-7] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==        Row: 1, 2, 6, 95, 250, 3, 2026-01-14 14:31:27, 1, 30
+2026-01-15 04:07:26.613 [http-nio-8080-exec-7] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==      Total: 1
+2026-01-15 04:07:26.627 [http-nio-8080-exec-8] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:07:26.627 [http-nio-8080-exec-8] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:07:26.628 [http-nio-8080-exec-8] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:07:26.629 [http-nio-8080-exec-8] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:07:26.629 [http-nio-8080-exec-8] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:07:26.632 [http-nio-8080-exec-8] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:07:26.632 [http-nio-8080-exec-8] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:07:26.633 [http-nio-8080-exec-8] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:07:26.633 [http-nio-8080-exec-8] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:07:26.633 [http-nio-8080-exec-8] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:07:26.634 [http-nio-8080-exec-8] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==>  Preparing: select * from player_status where user_id=?
+2026-01-15 04:07:26.634 [http-nio-8080-exec-8] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==> Parameters: 1(Long)
+2026-01-15 04:07:26.635 [http-nio-8080-exec-8] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==    Columns: id, spirit, body, current_exp, total_exp, level, update_time, user_id, coin
+2026-01-15 04:07:26.635 [http-nio-8080-exec-8] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==        Row: 1, 2, 6, 95, 250, 3, 2026-01-14 14:31:27, 1, 30
+2026-01-15 04:07:26.635 [http-nio-8080-exec-8] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==      Total: 1
+2026-01-15 04:07:26.637 [http-nio-8080-exec-8] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - ==>  Preparing: SELECT count(0) FROM task WHERE user_id = ?
+2026-01-15 04:07:26.637 [http-nio-8080-exec-8] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - ==> Parameters: 1(Long)
+2026-01-15 04:07:26.638 [http-nio-8080-exec-8] TRACE c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==    Columns: count(0)
+2026-01-15 04:07:26.638 [http-nio-8080-exec-8] TRACE c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==        Row: 3
+2026-01-15 04:07:26.638 [http-nio-8080-exec-8] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==      Total: 1
+2026-01-15 04:07:26.638 [http-nio-8080-exec-8] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - ==>  Preparing: select * from task WHERE user_id = ? order by create_time desc LIMIT ?
+2026-01-15 04:07:26.638 [http-nio-8080-exec-8] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - ==> Parameters: 1(Long), 5(Integer)
+2026-01-15 04:07:26.639 [http-nio-8080-exec-8] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==    Columns: id, title, description, exp_reward, reward_type, reward, status, create_time, user_id, coin_reward
+2026-01-15 04:07:26.639 [http-nio-8080-exec-8] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==        Row: 3, 购买测试, <<BLOB>>, 20, 0, 0, 1, 2026-01-14 14:25:41, 1, 0
+2026-01-15 04:07:26.639 [http-nio-8080-exec-8] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==        Row: 2, 创建测试, <<BLOB>>, 10, 0, 1, 1, 2026-01-14 01:37:59, 1, 0
+2026-01-15 04:07:26.639 [http-nio-8080-exec-8] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==        Row: 1, 深蹲测试, <<BLOB>>, 30, 1, 5, 1, 2025-12-24 17:24:06, 1, 0
+2026-01-15 04:07:26.640 [http-nio-8080-exec-8] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - <==      Total: 3
+2026-01-15 04:14:01.877 [http-nio-8080-exec-1] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:14:01.877 [http-nio-8080-exec-1] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:14:01.879 [http-nio-8080-exec-1] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:14:01.879 [http-nio-8080-exec-1] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:14:01.879 [http-nio-8080-exec-1] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:14:01.883 [http-nio-8080-exec-1] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:14:01.884 [http-nio-8080-exec-1] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:14:01.885 [http-nio-8080-exec-1] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:14:01.885 [http-nio-8080-exec-1] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:14:01.885 [http-nio-8080-exec-1] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:14:01.886 [http-nio-8080-exec-1] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==>  Preparing: select * from player_status where user_id=?
+2026-01-15 04:14:01.886 [http-nio-8080-exec-1] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==> Parameters: 1(Long)
+2026-01-15 04:14:01.886 [http-nio-8080-exec-1] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==    Columns: id, spirit, body, current_exp, total_exp, level, update_time, user_id, coin
+2026-01-15 04:14:01.886 [http-nio-8080-exec-1] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==        Row: 1, 2, 6, 95, 250, 3, 2026-01-14 14:31:27, 1, 30
+2026-01-15 04:14:01.888 [http-nio-8080-exec-1] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==      Total: 1
+2026-01-15 04:14:01.910 [http-nio-8080-exec-2] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:14:01.911 [http-nio-8080-exec-2] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:14:01.912 [http-nio-8080-exec-2] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:14:01.912 [http-nio-8080-exec-2] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:14:01.912 [http-nio-8080-exec-2] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:14:01.916 [http-nio-8080-exec-2] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:14:01.916 [http-nio-8080-exec-2] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:14:01.916 [http-nio-8080-exec-2] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:14:01.916 [http-nio-8080-exec-2] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:14:01.916 [http-nio-8080-exec-2] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:14:01.918 [http-nio-8080-exec-2] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==>  Preparing: select * from player_status where user_id=?
+2026-01-15 04:14:01.918 [http-nio-8080-exec-2] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==> Parameters: 1(Long)
+2026-01-15 04:14:01.919 [http-nio-8080-exec-2] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==    Columns: id, spirit, body, current_exp, total_exp, level, update_time, user_id, coin
+2026-01-15 04:14:01.919 [http-nio-8080-exec-2] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==        Row: 1, 2, 6, 95, 250, 3, 2026-01-14 14:31:27, 1, 30
+2026-01-15 04:14:01.922 [http-nio-8080-exec-2] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==      Total: 1
+2026-01-15 04:14:01.924 [http-nio-8080-exec-2] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - ==>  Preparing: SELECT count(0) FROM task WHERE user_id = ?
+2026-01-15 04:14:01.924 [http-nio-8080-exec-2] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - ==> Parameters: 1(Long)
+2026-01-15 04:14:01.925 [http-nio-8080-exec-2] TRACE c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==    Columns: count(0)
+2026-01-15 04:14:01.925 [http-nio-8080-exec-2] TRACE c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==        Row: 3
+2026-01-15 04:14:01.925 [http-nio-8080-exec-2] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==      Total: 1
+2026-01-15 04:14:01.926 [http-nio-8080-exec-2] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - ==>  Preparing: select * from task WHERE user_id = ? order by create_time desc LIMIT ?
+2026-01-15 04:14:01.926 [http-nio-8080-exec-2] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - ==> Parameters: 1(Long), 5(Integer)
+2026-01-15 04:14:01.927 [http-nio-8080-exec-2] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==    Columns: id, title, description, exp_reward, reward_type, reward, status, create_time, user_id, coin_reward
+2026-01-15 04:14:01.927 [http-nio-8080-exec-2] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==        Row: 3, 购买测试, <<BLOB>>, 20, 0, 0, 1, 2026-01-14 14:25:41, 1, 0
+2026-01-15 04:14:01.928 [http-nio-8080-exec-2] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==        Row: 2, 创建测试, <<BLOB>>, 10, 0, 1, 1, 2026-01-14 01:37:59, 1, 0
+2026-01-15 04:14:01.928 [http-nio-8080-exec-2] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==        Row: 1, 深蹲测试, <<BLOB>>, 30, 1, 5, 1, 2025-12-24 17:24:06, 1, 0
+2026-01-15 04:14:01.928 [http-nio-8080-exec-2] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - <==      Total: 3
+2026-01-15 04:14:04.353 [http-nio-8080-exec-5] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:14:04.353 [http-nio-8080-exec-5] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:14:04.354 [http-nio-8080-exec-5] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:14:04.355 [http-nio-8080-exec-5] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:14:04.355 [http-nio-8080-exec-5] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:14:04.363 [http-nio-8080-exec-5] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:14:04.363 [http-nio-8080-exec-5] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:14:04.366 [http-nio-8080-exec-5] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:14:04.366 [http-nio-8080-exec-5] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:14:04.366 [http-nio-8080-exec-5] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:14:04.367 [http-nio-8080-exec-5] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==>  Preparing: select * from player_status where user_id=?
+2026-01-15 04:14:04.367 [http-nio-8080-exec-5] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==> Parameters: 1(Long)
+2026-01-15 04:14:04.371 [http-nio-8080-exec-5] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==    Columns: id, spirit, body, current_exp, total_exp, level, update_time, user_id, coin
+2026-01-15 04:14:04.371 [http-nio-8080-exec-5] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==        Row: 1, 2, 6, 95, 250, 3, 2026-01-14 14:31:27, 1, 30
+2026-01-15 04:14:04.372 [http-nio-8080-exec-5] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==      Total: 1
+2026-01-15 04:14:04.394 [http-nio-8080-exec-4] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:14:04.396 [http-nio-8080-exec-4] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:14:04.398 [http-nio-8080-exec-4] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:14:04.398 [http-nio-8080-exec-4] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:14:04.399 [http-nio-8080-exec-4] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:14:04.411 [http-nio-8080-exec-4] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:14:04.411 [http-nio-8080-exec-4] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:14:04.413 [http-nio-8080-exec-4] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:14:04.413 [http-nio-8080-exec-4] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:14:04.413 [http-nio-8080-exec-4] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:14:04.414 [http-nio-8080-exec-4] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==>  Preparing: select * from player_status where user_id=?
+2026-01-15 04:14:04.415 [http-nio-8080-exec-4] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==> Parameters: 1(Long)
+2026-01-15 04:14:04.418 [http-nio-8080-exec-4] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==    Columns: id, spirit, body, current_exp, total_exp, level, update_time, user_id, coin
+2026-01-15 04:14:04.419 [http-nio-8080-exec-4] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==        Row: 1, 2, 6, 95, 250, 3, 2026-01-14 14:31:27, 1, 30
+2026-01-15 04:14:04.420 [http-nio-8080-exec-4] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==      Total: 1
+2026-01-15 04:14:04.427 [http-nio-8080-exec-4] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - ==>  Preparing: SELECT count(0) FROM task WHERE user_id = ?
+2026-01-15 04:14:04.428 [http-nio-8080-exec-4] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - ==> Parameters: 1(Long)
+2026-01-15 04:14:04.430 [http-nio-8080-exec-4] TRACE c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==    Columns: count(0)
+2026-01-15 04:14:04.430 [http-nio-8080-exec-4] TRACE c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==        Row: 3
+2026-01-15 04:14:04.430 [http-nio-8080-exec-4] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==      Total: 1
+2026-01-15 04:14:04.431 [http-nio-8080-exec-4] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - ==>  Preparing: select * from task WHERE user_id = ? order by create_time desc LIMIT ?
+2026-01-15 04:14:04.433 [http-nio-8080-exec-4] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - ==> Parameters: 1(Long), 5(Integer)
+2026-01-15 04:14:04.435 [http-nio-8080-exec-4] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==    Columns: id, title, description, exp_reward, reward_type, reward, status, create_time, user_id, coin_reward
+2026-01-15 04:14:04.435 [http-nio-8080-exec-4] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==        Row: 3, 购买测试, <<BLOB>>, 20, 0, 0, 1, 2026-01-14 14:25:41, 1, 0
+2026-01-15 04:14:04.436 [http-nio-8080-exec-4] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==        Row: 2, 创建测试, <<BLOB>>, 10, 0, 1, 1, 2026-01-14 01:37:59, 1, 0
+2026-01-15 04:14:04.437 [http-nio-8080-exec-4] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==        Row: 1, 深蹲测试, <<BLOB>>, 30, 1, 5, 1, 2025-12-24 17:24:06, 1, 0
+2026-01-15 04:14:04.437 [http-nio-8080-exec-4] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - <==      Total: 3
+2026-01-15 04:14:06.361 [http-nio-8080-exec-6] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:14:06.361 [http-nio-8080-exec-6] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:14:06.361 [http-nio-8080-exec-6] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:14:06.363 [http-nio-8080-exec-6] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:14:06.363 [http-nio-8080-exec-6] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:14:06.373 [http-nio-8080-exec-6] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:14:06.374 [http-nio-8080-exec-6] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:14:06.376 [http-nio-8080-exec-6] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:14:06.376 [http-nio-8080-exec-6] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:14:06.376 [http-nio-8080-exec-6] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:14:06.377 [http-nio-8080-exec-6] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==>  Preparing: select * from player_status where user_id=?
+2026-01-15 04:14:06.377 [http-nio-8080-exec-6] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==> Parameters: 1(Long)
+2026-01-15 04:14:06.378 [http-nio-8080-exec-6] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==    Columns: id, spirit, body, current_exp, total_exp, level, update_time, user_id, coin
+2026-01-15 04:14:06.378 [http-nio-8080-exec-6] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==        Row: 1, 2, 6, 95, 250, 3, 2026-01-14 14:31:27, 1, 30
+2026-01-15 04:14:06.379 [http-nio-8080-exec-6] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==      Total: 1
+2026-01-15 04:14:06.394 [http-nio-8080-exec-7] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:14:06.395 [http-nio-8080-exec-7] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:14:06.396 [http-nio-8080-exec-7] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:14:06.396 [http-nio-8080-exec-7] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:14:06.396 [http-nio-8080-exec-7] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:14:06.404 [http-nio-8080-exec-7] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:14:06.405 [http-nio-8080-exec-7] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:14:06.406 [http-nio-8080-exec-7] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:14:06.406 [http-nio-8080-exec-7] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:14:06.406 [http-nio-8080-exec-7] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:14:06.406 [http-nio-8080-exec-7] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==>  Preparing: select * from player_status where user_id=?
+2026-01-15 04:14:06.406 [http-nio-8080-exec-7] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==> Parameters: 1(Long)
+2026-01-15 04:14:06.408 [http-nio-8080-exec-7] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==    Columns: id, spirit, body, current_exp, total_exp, level, update_time, user_id, coin
+2026-01-15 04:14:06.409 [http-nio-8080-exec-7] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==        Row: 1, 2, 6, 95, 250, 3, 2026-01-14 14:31:27, 1, 30
+2026-01-15 04:14:06.410 [http-nio-8080-exec-7] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==      Total: 1
+2026-01-15 04:14:06.414 [http-nio-8080-exec-7] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - ==>  Preparing: SELECT count(0) FROM task WHERE user_id = ?
+2026-01-15 04:14:06.415 [http-nio-8080-exec-7] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - ==> Parameters: 1(Long)
+2026-01-15 04:14:06.416 [http-nio-8080-exec-7] TRACE c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==    Columns: count(0)
+2026-01-15 04:14:06.416 [http-nio-8080-exec-7] TRACE c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==        Row: 3
+2026-01-15 04:14:06.416 [http-nio-8080-exec-7] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==      Total: 1
+2026-01-15 04:14:06.417 [http-nio-8080-exec-7] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - ==>  Preparing: select * from task WHERE user_id = ? order by create_time desc LIMIT ?
+2026-01-15 04:14:06.417 [http-nio-8080-exec-7] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - ==> Parameters: 1(Long), 5(Integer)
+2026-01-15 04:14:06.418 [http-nio-8080-exec-7] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==    Columns: id, title, description, exp_reward, reward_type, reward, status, create_time, user_id, coin_reward
+2026-01-15 04:14:06.419 [http-nio-8080-exec-7] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==        Row: 3, 购买测试, <<BLOB>>, 20, 0, 0, 1, 2026-01-14 14:25:41, 1, 0
+2026-01-15 04:14:06.419 [http-nio-8080-exec-7] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==        Row: 2, 创建测试, <<BLOB>>, 10, 0, 1, 1, 2026-01-14 01:37:59, 1, 0
+2026-01-15 04:14:06.419 [http-nio-8080-exec-7] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==        Row: 1, 深蹲测试, <<BLOB>>, 30, 1, 5, 1, 2025-12-24 17:24:06, 1, 0
+2026-01-15 04:14:06.420 [http-nio-8080-exec-7] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - <==      Total: 3
+2026-01-15 04:16:47.932 [http-nio-8080-exec-10] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:16:47.933 [http-nio-8080-exec-10] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:16:47.934 [http-nio-8080-exec-10] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:16:47.935 [http-nio-8080-exec-10] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:16:47.935 [http-nio-8080-exec-10] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:16:47.946 [http-nio-8080-exec-10] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:16:47.946 [http-nio-8080-exec-10] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:16:47.947 [http-nio-8080-exec-10] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:16:47.947 [http-nio-8080-exec-10] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:16:47.947 [http-nio-8080-exec-10] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:16:47.947 [http-nio-8080-exec-10] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==>  Preparing: select * from player_status where user_id=?
+2026-01-15 04:16:47.947 [http-nio-8080-exec-10] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==> Parameters: 1(Long)
+2026-01-15 04:16:47.951 [http-nio-8080-exec-10] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==    Columns: id, spirit, body, current_exp, total_exp, level, update_time, user_id, coin
+2026-01-15 04:16:47.951 [http-nio-8080-exec-10] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==        Row: 1, 2, 6, 95, 250, 3, 2026-01-14 14:31:27, 1, 30
+2026-01-15 04:16:47.951 [http-nio-8080-exec-10] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==      Total: 1
+2026-01-15 04:16:47.974 [http-nio-8080-exec-3] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:16:47.974 [http-nio-8080-exec-3] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:16:47.975 [http-nio-8080-exec-3] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:16:47.975 [http-nio-8080-exec-3] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:16:47.975 [http-nio-8080-exec-3] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:16:48.003 [http-nio-8080-exec-3] DEBUG c.j.task_system.mapper.ShopMapper.selectAll_COUNT - ==>  Preparing: SELECT count(0) FROM shop_items
+2026-01-15 04:16:48.003 [http-nio-8080-exec-3] DEBUG c.j.task_system.mapper.ShopMapper.selectAll_COUNT - ==> Parameters: 
+2026-01-15 04:16:48.014 [http-nio-8080-exec-3] TRACE c.j.task_system.mapper.ShopMapper.selectAll_COUNT - <==    Columns: count(0)
+2026-01-15 04:16:48.014 [http-nio-8080-exec-3] TRACE c.j.task_system.mapper.ShopMapper.selectAll_COUNT - <==        Row: 1
+2026-01-15 04:16:48.015 [http-nio-8080-exec-3] DEBUG c.j.task_system.mapper.ShopMapper.selectAll_COUNT - <==      Total: 1
+2026-01-15 04:16:48.016 [http-nio-8080-exec-3] DEBUG c.jacolp.task_system.mapper.ShopMapper.selectAll - ==>  Preparing: select * from shop_items LIMIT ?
+2026-01-15 04:16:48.016 [http-nio-8080-exec-3] DEBUG c.jacolp.task_system.mapper.ShopMapper.selectAll - ==> Parameters: 5(Integer)
+2026-01-15 04:16:48.019 [http-nio-8080-exec-3] TRACE c.jacolp.task_system.mapper.ShopMapper.selectAll - <==    Columns: id, name, description, cost_type, cost_value, effect_type, effect_value, stack
+2026-01-15 04:16:48.019 [http-nio-8080-exec-3] TRACE c.jacolp.task_system.mapper.ShopMapper.selectAll - <==        Row: 1, 测试商品, <<BLOB>>, 0, 20, 0, 25, -1
+2026-01-15 04:16:48.020 [http-nio-8080-exec-3] DEBUG c.jacolp.task_system.mapper.ShopMapper.selectAll - <==      Total: 1
+2026-01-15 04:16:52.726 [http-nio-8080-exec-2] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:16:52.727 [http-nio-8080-exec-2] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:16:52.728 [http-nio-8080-exec-2] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:16:52.728 [http-nio-8080-exec-2] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:16:52.728 [http-nio-8080-exec-2] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:16:52.731 [http-nio-8080-exec-2] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:16:52.732 [http-nio-8080-exec-2] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:16:52.732 [http-nio-8080-exec-2] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:16:52.732 [http-nio-8080-exec-2] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:16:52.733 [http-nio-8080-exec-2] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:16:52.733 [http-nio-8080-exec-2] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==>  Preparing: select * from player_status where user_id=?
+2026-01-15 04:16:52.733 [http-nio-8080-exec-2] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==> Parameters: 1(Long)
+2026-01-15 04:16:52.733 [http-nio-8080-exec-2] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==    Columns: id, spirit, body, current_exp, total_exp, level, update_time, user_id, coin
+2026-01-15 04:16:52.734 [http-nio-8080-exec-2] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==        Row: 1, 2, 6, 95, 250, 3, 2026-01-14 14:31:27, 1, 30
+2026-01-15 04:16:52.734 [http-nio-8080-exec-2] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==      Total: 1
+2026-01-15 04:16:52.747 [http-nio-8080-exec-4] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:16:52.748 [http-nio-8080-exec-4] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:16:52.749 [http-nio-8080-exec-4] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:16:52.750 [http-nio-8080-exec-4] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:16:52.750 [http-nio-8080-exec-4] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:16:52.757 [http-nio-8080-exec-4] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:16:52.757 [http-nio-8080-exec-4] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:16:52.757 [http-nio-8080-exec-4] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:16:52.757 [http-nio-8080-exec-4] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:16:52.757 [http-nio-8080-exec-4] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:16:52.758 [http-nio-8080-exec-4] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==>  Preparing: select * from player_status where user_id=?
+2026-01-15 04:16:52.758 [http-nio-8080-exec-4] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==> Parameters: 1(Long)
+2026-01-15 04:16:52.758 [http-nio-8080-exec-4] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==    Columns: id, spirit, body, current_exp, total_exp, level, update_time, user_id, coin
+2026-01-15 04:16:52.758 [http-nio-8080-exec-4] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==        Row: 1, 2, 6, 95, 250, 3, 2026-01-14 14:31:27, 1, 30
+2026-01-15 04:16:52.758 [http-nio-8080-exec-4] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==      Total: 1
+2026-01-15 04:16:52.762 [http-nio-8080-exec-4] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - ==>  Preparing: SELECT count(0) FROM task WHERE user_id = ?
+2026-01-15 04:16:52.762 [http-nio-8080-exec-4] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - ==> Parameters: 1(Long)
+2026-01-15 04:16:52.763 [http-nio-8080-exec-4] TRACE c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==    Columns: count(0)
+2026-01-15 04:16:52.763 [http-nio-8080-exec-4] TRACE c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==        Row: 3
+2026-01-15 04:16:52.763 [http-nio-8080-exec-4] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==      Total: 1
+2026-01-15 04:16:52.764 [http-nio-8080-exec-4] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - ==>  Preparing: select * from task WHERE user_id = ? order by create_time desc LIMIT ?
+2026-01-15 04:16:52.764 [http-nio-8080-exec-4] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - ==> Parameters: 1(Long), 5(Integer)
+2026-01-15 04:16:52.765 [http-nio-8080-exec-4] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==    Columns: id, title, description, exp_reward, reward_type, reward, status, create_time, user_id, coin_reward
+2026-01-15 04:16:52.765 [http-nio-8080-exec-4] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==        Row: 3, 购买测试, <<BLOB>>, 20, 0, 0, 1, 2026-01-14 14:25:41, 1, 0
+2026-01-15 04:16:52.766 [http-nio-8080-exec-4] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==        Row: 2, 创建测试, <<BLOB>>, 10, 0, 1, 1, 2026-01-14 01:37:59, 1, 0
+2026-01-15 04:16:52.767 [http-nio-8080-exec-4] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==        Row: 1, 深蹲测试, <<BLOB>>, 30, 1, 5, 1, 2025-12-24 17:24:06, 1, 0
+2026-01-15 04:16:52.767 [http-nio-8080-exec-4] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - <==      Total: 3
+2026-01-15 04:16:54.612 [http-nio-8080-exec-7] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:16:54.613 [http-nio-8080-exec-7] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:16:54.614 [http-nio-8080-exec-7] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:16:54.614 [http-nio-8080-exec-7] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:16:54.614 [http-nio-8080-exec-7] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:16:54.617 [http-nio-8080-exec-7] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:16:54.617 [http-nio-8080-exec-7] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:16:54.619 [http-nio-8080-exec-7] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:16:54.619 [http-nio-8080-exec-7] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:16:54.619 [http-nio-8080-exec-7] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:16:54.619 [http-nio-8080-exec-7] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==>  Preparing: select * from player_status where user_id=?
+2026-01-15 04:16:54.619 [http-nio-8080-exec-7] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==> Parameters: 1(Long)
+2026-01-15 04:16:54.620 [http-nio-8080-exec-7] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==    Columns: id, spirit, body, current_exp, total_exp, level, update_time, user_id, coin
+2026-01-15 04:16:54.621 [http-nio-8080-exec-7] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==        Row: 1, 2, 6, 95, 250, 3, 2026-01-14 14:31:27, 1, 30
+2026-01-15 04:16:54.639 [http-nio-8080-exec-7] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==      Total: 1
+2026-01-15 04:16:54.656 [http-nio-8080-exec-9] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:16:54.658 [http-nio-8080-exec-9] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:16:54.658 [http-nio-8080-exec-9] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:16:54.658 [http-nio-8080-exec-9] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:16:54.659 [http-nio-8080-exec-9] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:16:54.667 [http-nio-8080-exec-9] DEBUG c.j.task_system.mapper.ShopMapper.selectAll_COUNT - ==>  Preparing: SELECT count(0) FROM shop_items
+2026-01-15 04:16:54.667 [http-nio-8080-exec-9] DEBUG c.j.task_system.mapper.ShopMapper.selectAll_COUNT - ==> Parameters: 
+2026-01-15 04:16:54.670 [http-nio-8080-exec-9] TRACE c.j.task_system.mapper.ShopMapper.selectAll_COUNT - <==    Columns: count(0)
+2026-01-15 04:16:54.670 [http-nio-8080-exec-9] TRACE c.j.task_system.mapper.ShopMapper.selectAll_COUNT - <==        Row: 1
+2026-01-15 04:16:54.670 [http-nio-8080-exec-9] DEBUG c.j.task_system.mapper.ShopMapper.selectAll_COUNT - <==      Total: 1
+2026-01-15 04:16:54.670 [http-nio-8080-exec-9] DEBUG c.jacolp.task_system.mapper.ShopMapper.selectAll - ==>  Preparing: select * from shop_items LIMIT ?
+2026-01-15 04:16:54.670 [http-nio-8080-exec-9] DEBUG c.jacolp.task_system.mapper.ShopMapper.selectAll - ==> Parameters: 5(Integer)
+2026-01-15 04:16:54.671 [http-nio-8080-exec-9] TRACE c.jacolp.task_system.mapper.ShopMapper.selectAll - <==    Columns: id, name, description, cost_type, cost_value, effect_type, effect_value, stack
+2026-01-15 04:16:54.672 [http-nio-8080-exec-9] TRACE c.jacolp.task_system.mapper.ShopMapper.selectAll - <==        Row: 1, 测试商品, <<BLOB>>, 0, 20, 0, 25, -1
+2026-01-15 04:16:54.672 [http-nio-8080-exec-9] DEBUG c.jacolp.task_system.mapper.ShopMapper.selectAll - <==      Total: 1
+2026-01-15 04:18:02.476 [http-nio-8080-exec-3] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:18:02.477 [http-nio-8080-exec-3] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:18:02.477 [http-nio-8080-exec-3] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:18:02.478 [http-nio-8080-exec-3] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:18:02.478 [http-nio-8080-exec-3] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:18:02.481 [http-nio-8080-exec-3] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:18:02.481 [http-nio-8080-exec-3] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:18:02.482 [http-nio-8080-exec-3] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:18:02.482 [http-nio-8080-exec-3] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:18:02.482 [http-nio-8080-exec-3] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:18:02.483 [http-nio-8080-exec-3] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==>  Preparing: select * from player_status where user_id=?
+2026-01-15 04:18:02.483 [http-nio-8080-exec-3] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==> Parameters: 1(Long)
+2026-01-15 04:18:02.484 [http-nio-8080-exec-3] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==    Columns: id, spirit, body, current_exp, total_exp, level, update_time, user_id, coin
+2026-01-15 04:18:02.484 [http-nio-8080-exec-3] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==        Row: 1, 2, 6, 95, 250, 3, 2026-01-14 14:31:27, 1, 30
+2026-01-15 04:18:02.484 [http-nio-8080-exec-3] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==      Total: 1
+2026-01-15 04:18:02.497 [http-nio-8080-exec-5] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:18:02.498 [http-nio-8080-exec-5] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:18:02.499 [http-nio-8080-exec-5] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:18:02.499 [http-nio-8080-exec-5] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:18:02.500 [http-nio-8080-exec-5] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:18:02.506 [http-nio-8080-exec-5] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:18:02.507 [http-nio-8080-exec-5] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:18:02.508 [http-nio-8080-exec-5] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:18:02.508 [http-nio-8080-exec-5] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:18:02.508 [http-nio-8080-exec-5] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:18:02.509 [http-nio-8080-exec-5] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==>  Preparing: select * from player_status where user_id=?
+2026-01-15 04:18:02.509 [http-nio-8080-exec-5] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==> Parameters: 1(Long)
+2026-01-15 04:18:02.510 [http-nio-8080-exec-5] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==    Columns: id, spirit, body, current_exp, total_exp, level, update_time, user_id, coin
+2026-01-15 04:18:02.510 [http-nio-8080-exec-5] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==        Row: 1, 2, 6, 95, 250, 3, 2026-01-14 14:31:27, 1, 30
+2026-01-15 04:18:02.511 [http-nio-8080-exec-5] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==      Total: 1
+2026-01-15 04:18:02.514 [http-nio-8080-exec-5] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - ==>  Preparing: SELECT count(0) FROM task WHERE user_id = ?
+2026-01-15 04:18:02.514 [http-nio-8080-exec-5] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - ==> Parameters: 1(Long)
+2026-01-15 04:18:02.515 [http-nio-8080-exec-5] TRACE c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==    Columns: count(0)
+2026-01-15 04:18:02.516 [http-nio-8080-exec-5] TRACE c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==        Row: 3
+2026-01-15 04:18:02.516 [http-nio-8080-exec-5] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==      Total: 1
+2026-01-15 04:18:02.516 [http-nio-8080-exec-5] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - ==>  Preparing: select * from task WHERE user_id = ? order by create_time desc LIMIT ?
+2026-01-15 04:18:02.517 [http-nio-8080-exec-5] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - ==> Parameters: 1(Long), 5(Integer)
+2026-01-15 04:18:02.518 [http-nio-8080-exec-5] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==    Columns: id, title, description, exp_reward, reward_type, reward, status, create_time, user_id, coin_reward
+2026-01-15 04:18:02.518 [http-nio-8080-exec-5] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==        Row: 3, 购买测试, <<BLOB>>, 20, 0, 0, 1, 2026-01-14 14:25:41, 1, 0
+2026-01-15 04:18:02.518 [http-nio-8080-exec-5] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==        Row: 2, 创建测试, <<BLOB>>, 10, 0, 1, 1, 2026-01-14 01:37:59, 1, 0
+2026-01-15 04:18:02.518 [http-nio-8080-exec-5] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==        Row: 1, 深蹲测试, <<BLOB>>, 30, 1, 5, 1, 2025-12-24 17:24:06, 1, 0
+2026-01-15 04:18:02.519 [http-nio-8080-exec-5] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - <==      Total: 3
+2026-01-15 04:18:21.823 [http-nio-8080-exec-6] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:18:21.823 [http-nio-8080-exec-6] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:18:21.824 [http-nio-8080-exec-6] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:18:21.824 [http-nio-8080-exec-6] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:18:21.824 [http-nio-8080-exec-6] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:18:21.827 [http-nio-8080-exec-6] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:18:21.828 [http-nio-8080-exec-6] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:18:21.828 [http-nio-8080-exec-6] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:18:21.829 [http-nio-8080-exec-6] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:18:21.829 [http-nio-8080-exec-6] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:18:21.829 [http-nio-8080-exec-6] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==>  Preparing: select * from player_status where user_id=?
+2026-01-15 04:18:21.829 [http-nio-8080-exec-6] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==> Parameters: 1(Long)
+2026-01-15 04:18:21.831 [http-nio-8080-exec-6] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==    Columns: id, spirit, body, current_exp, total_exp, level, update_time, user_id, coin
+2026-01-15 04:18:21.831 [http-nio-8080-exec-6] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==        Row: 1, 2, 6, 95, 250, 3, 2026-01-14 14:31:27, 1, 30
+2026-01-15 04:18:21.831 [http-nio-8080-exec-6] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==      Total: 1
+2026-01-15 04:18:21.872 [http-nio-8080-exec-8] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:18:21.872 [http-nio-8080-exec-8] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:18:21.874 [http-nio-8080-exec-8] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:18:21.874 [http-nio-8080-exec-8] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:18:21.874 [http-nio-8080-exec-8] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:18:21.879 [http-nio-8080-exec-8] DEBUG c.j.task_system.mapper.ShopMapper.selectAll_COUNT - ==>  Preparing: SELECT count(0) FROM shop_items
+2026-01-15 04:18:21.879 [http-nio-8080-exec-8] DEBUG c.j.task_system.mapper.ShopMapper.selectAll_COUNT - ==> Parameters: 
+2026-01-15 04:18:21.888 [http-nio-8080-exec-8] TRACE c.j.task_system.mapper.ShopMapper.selectAll_COUNT - <==    Columns: count(0)
+2026-01-15 04:18:21.888 [http-nio-8080-exec-8] TRACE c.j.task_system.mapper.ShopMapper.selectAll_COUNT - <==        Row: 1
+2026-01-15 04:18:21.888 [http-nio-8080-exec-8] DEBUG c.j.task_system.mapper.ShopMapper.selectAll_COUNT - <==      Total: 1
+2026-01-15 04:18:21.889 [http-nio-8080-exec-8] DEBUG c.jacolp.task_system.mapper.ShopMapper.selectAll - ==>  Preparing: select * from shop_items LIMIT ?
+2026-01-15 04:18:21.889 [http-nio-8080-exec-8] DEBUG c.jacolp.task_system.mapper.ShopMapper.selectAll - ==> Parameters: 5(Integer)
+2026-01-15 04:18:21.890 [http-nio-8080-exec-8] TRACE c.jacolp.task_system.mapper.ShopMapper.selectAll - <==    Columns: id, name, description, cost_type, cost_value, effect_type, effect_value, stack
+2026-01-15 04:18:21.890 [http-nio-8080-exec-8] TRACE c.jacolp.task_system.mapper.ShopMapper.selectAll - <==        Row: 1, 测试商品, <<BLOB>>, 0, 20, 0, 25, -1
+2026-01-15 04:18:21.890 [http-nio-8080-exec-8] DEBUG c.jacolp.task_system.mapper.ShopMapper.selectAll - <==      Total: 1
+2026-01-15 04:18:24.840 [http-nio-8080-exec-9] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:18:24.840 [http-nio-8080-exec-9] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:18:24.842 [http-nio-8080-exec-9] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:18:24.842 [http-nio-8080-exec-9] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:18:24.843 [http-nio-8080-exec-9] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:18:24.849 [http-nio-8080-exec-9] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:18:24.849 [http-nio-8080-exec-9] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:18:24.850 [http-nio-8080-exec-9] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:18:24.851 [http-nio-8080-exec-9] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:18:24.851 [http-nio-8080-exec-9] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:18:24.851 [http-nio-8080-exec-9] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==>  Preparing: select * from player_status where user_id=?
+2026-01-15 04:18:24.851 [http-nio-8080-exec-9] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==> Parameters: 1(Long)
+2026-01-15 04:18:24.852 [http-nio-8080-exec-9] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==    Columns: id, spirit, body, current_exp, total_exp, level, update_time, user_id, coin
+2026-01-15 04:18:24.852 [http-nio-8080-exec-9] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==        Row: 1, 2, 6, 95, 250, 3, 2026-01-14 14:31:27, 1, 30
+2026-01-15 04:18:24.852 [http-nio-8080-exec-9] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==      Total: 1
+2026-01-15 04:18:24.876 [http-nio-8080-exec-1] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:18:24.876 [http-nio-8080-exec-1] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:18:24.878 [http-nio-8080-exec-1] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:18:24.878 [http-nio-8080-exec-1] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:18:24.878 [http-nio-8080-exec-1] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:18:24.885 [http-nio-8080-exec-1] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:18:24.886 [http-nio-8080-exec-1] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:18:24.887 [http-nio-8080-exec-1] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:18:24.888 [http-nio-8080-exec-1] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:18:24.888 [http-nio-8080-exec-1] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:18:24.888 [http-nio-8080-exec-1] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==>  Preparing: select * from player_status where user_id=?
+2026-01-15 04:18:24.888 [http-nio-8080-exec-1] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==> Parameters: 1(Long)
+2026-01-15 04:18:24.889 [http-nio-8080-exec-1] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==    Columns: id, spirit, body, current_exp, total_exp, level, update_time, user_id, coin
+2026-01-15 04:18:24.889 [http-nio-8080-exec-1] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==        Row: 1, 2, 6, 95, 250, 3, 2026-01-14 14:31:27, 1, 30
+2026-01-15 04:18:24.890 [http-nio-8080-exec-1] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==      Total: 1
+2026-01-15 04:18:24.896 [http-nio-8080-exec-1] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - ==>  Preparing: SELECT count(0) FROM task WHERE user_id = ?
+2026-01-15 04:18:24.896 [http-nio-8080-exec-1] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - ==> Parameters: 1(Long)
+2026-01-15 04:18:24.897 [http-nio-8080-exec-1] TRACE c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==    Columns: count(0)
+2026-01-15 04:18:24.897 [http-nio-8080-exec-1] TRACE c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==        Row: 3
+2026-01-15 04:18:24.897 [http-nio-8080-exec-1] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==      Total: 1
+2026-01-15 04:18:24.898 [http-nio-8080-exec-1] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - ==>  Preparing: select * from task WHERE user_id = ? order by create_time desc LIMIT ?
+2026-01-15 04:18:24.899 [http-nio-8080-exec-1] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - ==> Parameters: 1(Long), 5(Integer)
+2026-01-15 04:18:24.900 [http-nio-8080-exec-1] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==    Columns: id, title, description, exp_reward, reward_type, reward, status, create_time, user_id, coin_reward
+2026-01-15 04:18:24.901 [http-nio-8080-exec-1] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==        Row: 3, 购买测试, <<BLOB>>, 20, 0, 0, 1, 2026-01-14 14:25:41, 1, 0
+2026-01-15 04:18:24.902 [http-nio-8080-exec-1] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==        Row: 2, 创建测试, <<BLOB>>, 10, 0, 1, 1, 2026-01-14 01:37:59, 1, 0
+2026-01-15 04:18:24.902 [http-nio-8080-exec-1] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==        Row: 1, 深蹲测试, <<BLOB>>, 30, 1, 5, 1, 2025-12-24 17:24:06, 1, 0
+2026-01-15 04:18:24.902 [http-nio-8080-exec-1] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - <==      Total: 3
+2026-01-15 04:18:47.336 [http-nio-8080-exec-2] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:18:47.336 [http-nio-8080-exec-2] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:18:47.338 [http-nio-8080-exec-2] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:18:47.338 [http-nio-8080-exec-2] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:18:47.338 [http-nio-8080-exec-2] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:18:47.347 [http-nio-8080-exec-2] DEBUG c.jacolp.task_system.mapper.TaskMapper.deleteById - ==>  Preparing: delete from task where id=?
+2026-01-15 04:18:47.347 [http-nio-8080-exec-2] DEBUG c.jacolp.task_system.mapper.TaskMapper.deleteById - ==> Parameters: 2(Long)
+2026-01-15 04:18:47.417 [http-nio-8080-exec-2] DEBUG c.jacolp.task_system.mapper.TaskMapper.deleteById - <==    Updates: 1
+2026-01-15 04:18:47.451 [http-nio-8080-exec-4] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:18:47.452 [http-nio-8080-exec-4] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:18:47.454 [http-nio-8080-exec-4] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:18:47.454 [http-nio-8080-exec-4] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:18:47.454 [http-nio-8080-exec-4] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:18:47.462 [http-nio-8080-exec-4] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-15 04:18:47.464 [http-nio-8080-exec-4] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-15 04:18:47.467 [http-nio-8080-exec-4] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at
+2026-01-15 04:18:47.467 [http-nio-8080-exec-4] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$EOjoWHErveB7u3hbxgW7KeENyV8dHCv.tg0uJYmXvq8doxoz.2IAW, 2025-12-25 22:48:35
+2026-01-15 04:18:47.467 [http-nio-8080-exec-4] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-15 04:18:47.468 [http-nio-8080-exec-4] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==>  Preparing: select * from player_status where user_id=?
+2026-01-15 04:18:47.469 [http-nio-8080-exec-4] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==> Parameters: 1(Long)
+2026-01-15 04:18:47.471 [http-nio-8080-exec-4] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==    Columns: id, spirit, body, current_exp, total_exp, level, update_time, user_id, coin
+2026-01-15 04:18:47.471 [http-nio-8080-exec-4] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==        Row: 1, 2, 6, 95, 250, 3, 2026-01-14 14:31:27, 1, 30
+2026-01-15 04:18:47.472 [http-nio-8080-exec-4] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==      Total: 1
+2026-01-15 04:18:47.475 [http-nio-8080-exec-4] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - ==>  Preparing: SELECT count(0) FROM task WHERE user_id = ?
+2026-01-15 04:18:47.475 [http-nio-8080-exec-4] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - ==> Parameters: 1(Long)
+2026-01-15 04:18:47.476 [http-nio-8080-exec-4] TRACE c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==    Columns: count(0)
+2026-01-15 04:18:47.476 [http-nio-8080-exec-4] TRACE c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==        Row: 2
+2026-01-15 04:18:47.476 [http-nio-8080-exec-4] DEBUG c.j.t.m.TaskMapper.selectByTaskCondition_COUNT - <==      Total: 1
+2026-01-15 04:18:47.477 [http-nio-8080-exec-4] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - ==>  Preparing: select * from task WHERE user_id = ? order by create_time desc LIMIT ?
+2026-01-15 04:18:47.477 [http-nio-8080-exec-4] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - ==> Parameters: 1(Long), 5(Integer)
+2026-01-15 04:18:47.479 [http-nio-8080-exec-4] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==    Columns: id, title, description, exp_reward, reward_type, reward, status, create_time, user_id, coin_reward
+2026-01-15 04:18:47.479 [http-nio-8080-exec-4] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==        Row: 3, 购买测试, <<BLOB>>, 20, 0, 0, 1, 2026-01-14 14:25:41, 1, 0
+2026-01-15 04:18:47.479 [http-nio-8080-exec-4] TRACE c.j.t.mapper.TaskMapper.selectByTaskCondition - <==        Row: 1, 深蹲测试, <<BLOB>>, 30, 1, 5, 1, 2025-12-24 17:24:06, 1, 0
+2026-01-15 04:18:47.480 [http-nio-8080-exec-4] DEBUG c.j.t.mapper.TaskMapper.selectByTaskCondition - <==      Total: 2
+2026-01-15 04:19:36.595 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-15 04:19:36.598 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
