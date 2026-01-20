@@ -1,6 +1,7 @@
 package com.jacolp.task_system.exception;
 
 import com.jacolp.task_system.controller.TaskController;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import javax.naming.AuthenticationException;
 import java.nio.file.AccessDeniedException;
 
+@Slf4j
 @RestControllerAdvice   // 全局异常处理
 public class GlobalExceptionHandler {
 
@@ -48,12 +50,23 @@ public class GlobalExceptionHandler {
     }
 
     /**
+     * 捕获用户处理相关的异常
+     * @param e 捕获到的异常
+     * @return 错误信息
+     */
+    @ExceptionHandler({UserException.class})
+    public ResponseEntity<String> handleUserException(AuthenticationException e) {
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("用户处理错误：" + e.getMessage());
+    }
+
+    /**
      * 捕获其他异常
      * @param e 捕获到的异常
      * @return 错误信息
      */
     @ExceptionHandler(Exception.class)
     public ResponseEntity<String> handleException(Exception e) {
+        log.error("捕获到异常：" + e.getMessage());
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("服务器错误：" + e.getMessage());
     }
 }

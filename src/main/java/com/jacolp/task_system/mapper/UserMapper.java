@@ -1,10 +1,7 @@
 package com.jacolp.task_system.mapper;
 
 import com.jacolp.task_system.entity.User;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Options;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 @Mapper
 public interface UserMapper {
@@ -22,7 +19,6 @@ public interface UserMapper {
      * @param user 需要新注册的用户
      * @return 是否注册成功
      */
-    @Insert("INSERT INTO user(username, password) VALUES(#{username}, #{password})")
     @Options(useGeneratedKeys = true, keyProperty = "id")
     int insert(User user);
 
@@ -33,4 +29,11 @@ public interface UserMapper {
      */
     @Select("select count(*) from user where username=#{username}")
     int countByUsername(String username);
+
+    /**
+     * 更新用户信息
+     * @param user 待更新的用户
+     * @return 是否更新成功
+     */
+    Integer update(User user);
 }

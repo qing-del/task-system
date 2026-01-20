@@ -112,6 +112,13 @@
             <version>1.4.11</version>
         </dependency>
 
+<!--        阿里云OSS自定义starter引入-->
+        <dependency>
+            <groupId>com.aliyun.oss</groupId>
+            <artifactId>aliyun-oss-spring-boot-starter</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
     </dependencies>
 
     <build>

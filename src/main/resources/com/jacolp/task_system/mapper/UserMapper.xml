@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jacolp.task_system.mapper.UserMapper">
+    <insert id="insert">
+        INSERT INTO user(username, password, role, created_at
+        <if test="headPhoto != null">
+            , head_photo
+        </if>
+        ) VALUES(#{username}, #{password}
+        <choose>
+            <when test="role != null and role != 0">
+                , #{role}
+            </when>
+            <otherwise>
+                , 1
+            </otherwise>
+        </choose>
+        , now()
+                 <if test="headPhoto != null">
+                     , #{headPhoto}
+                 </if>
+                 )
+    </insert>
+
+
+    <update id="update">
+        update user set
+                        username=#{username},
+                        password=#{password}
+                        <if test="role != null">
+                            , role=#{role}
+                        </if>
+                        <if test="headPhoto != null">
+                            , head_photo= #{headPhoto}
+                        </if>
+            where id=#{id}
+    </update>
+</mapper>

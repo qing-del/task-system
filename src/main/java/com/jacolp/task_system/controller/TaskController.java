@@ -25,6 +25,10 @@ public class TaskController {
     @Autowired private TaskService taskService;
     @Autowired private AiTaskService aiTaskService;
     @Autowired private PlayerStatusService playerStatusService;
+
+    public TaskController() {
+        log.info("TaskController 初始化");
+    }
 //    @Autowired private TaskMapper taskMapper;
 //    @Autowired private UserMapper userMapper;   // 需要引入这个来查 ID
 

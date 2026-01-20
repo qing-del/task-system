@@ -24,7 +24,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @Configuration
-@EnableWebSecurity
+@EnableWebSecurity  // 开启 Spring Security
 public class SecurityConfig {
 
     private final JwtAuthenticationFilter jwtAuthFilter;
