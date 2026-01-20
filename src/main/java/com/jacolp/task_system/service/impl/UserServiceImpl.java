@@ -1,6 +1,7 @@
 package com.jacolp.task_system.service.impl;
 
 import com.aliyun.oss.AliyunOSSOperator;
+import com.aliyuncs.exceptions.ClientException;
 import com.jacolp.task_system.dto.InfoResponse;
 import com.jacolp.task_system.entity.User;
 import com.jacolp.task_system.exception.UserException;
@@ -16,6 +17,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.nio.file.Files;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 @Slf4j
 @Service
@@ -109,10 +112,32 @@ public class UserServiceImpl implements UserService {
         String originalFilename = file.getOriginalFilename();
         String username = SecurityUtil.getCurrentUsername();
         User user = getUser(username);
+
+        String date;
+
+        // 判断用户是否已经有头像 若有则删除
+        if (user.getHeadPhoto() != null) {
+            try {
+                log.info("The user already has a head photo! And system is deleting user head photo!");
+                date = user.getHeadPhotoUpdateTime();
+                // 通过 url 截取文件名字
+                String path = date + "/" + user.getHeadPhoto().substring(user.getHeadPhoto().lastIndexOf("/") + 1);
+                aliyunOSSOperator.delete(path);
+            } catch (ClientException e) {
+                log.error("Failed to delete the old head photo!");
+                throw new UserException("阿里云删除头像失败！");
+            }
+        }
+        log.info("Original head photo deleted successfully!");
+
+        // 获取现在日期(yyyy/MM)
+        date = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy/MM"));
+
         // 2. 上传文件
         try {
-            String url = aliyunOSSOperator.upload(file.getBytes(), originalFilename);
+            String url = aliyunOSSOperator.upload(file.getBytes(), originalFilename, date);
             user.setHeadPhoto(url);
+            user.setHeadPhotoUpdateTime(date);
             Integer result = userMapper.update(user);
 
             if (result==null || result==0) {

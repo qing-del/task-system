@@ -9,6 +9,9 @@
         <if test="headPhoto != null">
             , head_photo
         </if>
+        <if test="headPhotoUpdateTime != null">
+            , head_photo_update_time
+        </if>
         ) VALUES(#{username}, #{password}
         <choose>
             <when test="role != null and role != 0">
@@ -22,6 +25,9 @@
                  <if test="headPhoto != null">
                      , #{headPhoto}
                  </if>
+                <if test="headPhotoUpdateTime != null">
+                    , #{headPhotoUpdateTime}
+                </if>
                  )
     </insert>
 
@@ -35,6 +41,9 @@
                         </if>
                         <if test="headPhoto != null">
                             , head_photo= #{headPhoto}
+                        </if>
+                        <if test="headPhotoUpdateTime != null">
+                            , head_photo_update_time=#{headPhotoUpdateTime}
                         </if>
             where id=#{id}
     </update>

@@ -21,4 +21,5 @@ public class User {
     private Date createdAt; // 创建时间
 
     private String headPhoto;   // 头像 -- 阿里云OSS的URL地址
+    private String headPhotoUpdateTime; // 保存头像更新的时间 (yyyy/MM)
 }
