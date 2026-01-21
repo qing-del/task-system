@@ -1,0 +1,118 @@
+2026-01-22 00:00:17.385 [main] INFO  com.jacolp.task_system.TaskSystemApplication - Starting TaskSystemApplication using Java 17.0.12 with PID 18736 (E:\JavaProject\task-system\target\classes started by q1244 in E:\JavaProject\task-system)
+2026-01-22 00:00:17.386 [main] DEBUG com.jacolp.task_system.TaskSystemApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2026-01-22 00:00:17.386 [main] INFO  com.jacolp.task_system.TaskSystemApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-22 00:00:18.289 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-01-22 00:00:18.296 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-22 00:00:18.299 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-22 00:00:18.299 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-01-22 00:00:18.341 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-22 00:00:18.341 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 928 ms
+2026-01-22 00:00:18.500 [main] DEBUG c.j.task_system.filter.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-01-22 00:00:18.538 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-01-22 00:00:18.539 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2026-01-22 00:00:18.574 [main] INFO  com.jacolp.task_system.controller.TaskController - TaskController 初始化
+2026-01-22 00:00:18.682 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-01-22 00:00:18.942 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-22 00:00:18.954 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-01-22 00:00:18.959 [main] INFO  com.jacolp.task_system.TaskSystemApplication - Started TaskSystemApplication in 1.832 seconds (process running for 2.72)
+2026-01-22 00:01:15.282 [http-nio-8080-exec-5] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-22 00:01:15.283 [http-nio-8080-exec-5] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-01-22 00:01:15.283 [http-nio-8080-exec-5] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2026-01-22 00:01:15.299 [http-nio-8080-exec-5] WARN  c.j.task_system.filter.JwtAuthenticationFilter - 请求头不合法导致异常！
+2026-01-22 00:01:15.351 [http-nio-8080-exec-5] INFO  c.jacolp.task_system.service.impl.AuthServiceImpl - Start verifying the login information...
+2026-01-22 00:01:15.423 [http-nio-8080-exec-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-22 00:01:15.442 [http-nio-8080-exec-5] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2d54d004
+2026-01-22 00:01:15.443 [http-nio-8080-exec-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-22 00:01:15.448 [http-nio-8080-exec-5] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-22 00:01:15.462 [http-nio-8080-exec-5] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-22 00:01:15.495 [http-nio-8080-exec-5] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at, role, head_photo, head_photo_update_time
+2026-01-22 00:01:15.497 [http-nio-8080-exec-5] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$RBkPl4b5rBXyhO.x20Rdmu6gMgMAcRUoBbBO3cfWbeuewMPsnVPrO, 2025-12-25 22:48:35, 3, https://task-system-jacolp.oss-cn-beijing.aliyuncs.com/2026/01/b0d3fc1a-2dea-4fd0-8e03-479fa16f52d7.jpg, 2026/01
+2026-01-22 00:01:15.498 [http-nio-8080-exec-5] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-22 00:01:22.730 [http-nio-8080-exec-3] WARN  c.j.task_system.filter.JwtAuthenticationFilter - 请求头不合法导致异常！
+2026-01-22 00:01:22.732 [http-nio-8080-exec-3] INFO  c.jacolp.task_system.service.impl.AuthServiceImpl - Start verifying the login information...
+2026-01-22 00:01:22.734 [http-nio-8080-exec-3] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-22 00:01:22.734 [http-nio-8080-exec-3] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-22 00:01:22.735 [http-nio-8080-exec-3] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at, role, head_photo, head_photo_update_time
+2026-01-22 00:01:22.735 [http-nio-8080-exec-3] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$RBkPl4b5rBXyhO.x20Rdmu6gMgMAcRUoBbBO3cfWbeuewMPsnVPrO, 2025-12-25 22:48:35, 3, https://task-system-jacolp.oss-cn-beijing.aliyuncs.com/2026/01/b0d3fc1a-2dea-4fd0-8e03-479fa16f52d7.jpg, 2026/01
+2026-01-22 00:01:22.735 [http-nio-8080-exec-3] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-22 00:01:22.789 [http-nio-8080-exec-3] INFO  c.jacolp.task_system.service.impl.AuthServiceImpl - The user logged in successfully!
+2026-01-22 00:01:22.790 [http-nio-8080-exec-3] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-22 00:01:22.790 [http-nio-8080-exec-3] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-22 00:01:22.791 [http-nio-8080-exec-3] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at, role, head_photo, head_photo_update_time
+2026-01-22 00:01:22.791 [http-nio-8080-exec-3] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$RBkPl4b5rBXyhO.x20Rdmu6gMgMAcRUoBbBO3cfWbeuewMPsnVPrO, 2025-12-25 22:48:35, 3, https://task-system-jacolp.oss-cn-beijing.aliyuncs.com/2026/01/b0d3fc1a-2dea-4fd0-8e03-479fa16f52d7.jpg, 2026/01
+2026-01-22 00:01:22.791 [http-nio-8080-exec-3] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-22 00:03:33.728 [http-nio-8080-exec-6] INFO  c.j.task_system.filter.JwtAuthenticationFilter - 用户id：1
+2026-01-22 00:03:33.729 [http-nio-8080-exec-6] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-22 00:03:33.729 [http-nio-8080-exec-6] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-22 00:03:33.731 [http-nio-8080-exec-6] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at, role, head_photo, head_photo_update_time
+2026-01-22 00:03:33.731 [http-nio-8080-exec-6] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$RBkPl4b5rBXyhO.x20Rdmu6gMgMAcRUoBbBO3cfWbeuewMPsnVPrO, 2025-12-25 22:48:35, 3, https://task-system-jacolp.oss-cn-beijing.aliyuncs.com/2026/01/b0d3fc1a-2dea-4fd0-8e03-479fa16f52d7.jpg, 2026/01
+2026-01-22 00:03:33.732 [http-nio-8080-exec-6] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-22 00:03:33.735 [http-nio-8080-exec-6] INFO  c.j.task_system.filter.JwtAuthenticationFilter - Token is valid! -- √
+2026-01-22 00:03:33.740 [http-nio-8080-exec-6] ERROR c.j.task_system.exception.GlobalExceptionHandler - 捕获到异常：Required request parameter 'pageNum' for method parameter type int is not present
+2026-01-22 00:04:12.901 [http-nio-8080-exec-8] INFO  c.j.task_system.filter.JwtAuthenticationFilter - 用户id：1
+2026-01-22 00:04:12.902 [http-nio-8080-exec-8] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-22 00:04:12.902 [http-nio-8080-exec-8] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-22 00:04:12.903 [http-nio-8080-exec-8] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at, role, head_photo, head_photo_update_time
+2026-01-22 00:04:12.903 [http-nio-8080-exec-8] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$RBkPl4b5rBXyhO.x20Rdmu6gMgMAcRUoBbBO3cfWbeuewMPsnVPrO, 2025-12-25 22:48:35, 3, https://task-system-jacolp.oss-cn-beijing.aliyuncs.com/2026/01/b0d3fc1a-2dea-4fd0-8e03-479fa16f52d7.jpg, 2026/01
+2026-01-22 00:04:12.903 [http-nio-8080-exec-8] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-22 00:04:12.906 [http-nio-8080-exec-8] INFO  c.j.task_system.filter.JwtAuthenticationFilter - Token is valid! -- √
+2026-01-22 00:04:24.962 [http-nio-8080-exec-8] ERROR c.j.task_system.exception.GlobalExceptionHandler - 捕获到异常：Cannot invoke "com.jacolp.task_system.anno.MethodLog.enable()" because "methodLogAnnotation" is null
+2026-01-22 00:29:41.489 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-22 00:29:41.494 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-22 00:29:45.344 [main] INFO  com.jacolp.task_system.TaskSystemApplication - Starting TaskSystemApplication using Java 17.0.12 with PID 4252 (E:\JavaProject\task-system\target\classes started by q1244 in E:\JavaProject\task-system)
+2026-01-22 00:29:45.345 [main] DEBUG com.jacolp.task_system.TaskSystemApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2026-01-22 00:29:45.345 [main] INFO  com.jacolp.task_system.TaskSystemApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-22 00:29:46.059 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-01-22 00:29:46.065 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-22 00:29:46.068 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-22 00:29:46.068 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-01-22 00:29:46.107 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-22 00:29:46.107 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 739 ms
+2026-01-22 00:29:46.236 [main] DEBUG c.j.task_system.filter.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-01-22 00:29:46.272 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-01-22 00:29:46.273 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2026-01-22 00:29:46.305 [main] INFO  com.jacolp.task_system.controller.TaskController - TaskController 初始化
+2026-01-22 00:29:46.389 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-01-22 00:29:46.649 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-22 00:29:46.659 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-01-22 00:29:46.665 [main] INFO  com.jacolp.task_system.TaskSystemApplication - Started TaskSystemApplication in 1.528 seconds (process running for 2.139)
+2026-01-22 00:30:09.286 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-22 00:30:09.286 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-01-22 00:30:09.286 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2026-01-22 00:30:09.332 [http-nio-8080-exec-2] INFO  c.j.task_system.filter.JwtAuthenticationFilter - 用户id：1
+2026-01-22 00:30:09.344 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-22 00:30:09.360 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3518890a
+2026-01-22 00:30:09.361 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-22 00:30:09.365 [http-nio-8080-exec-2] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-22 00:30:09.378 [http-nio-8080-exec-2] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-22 00:30:09.391 [http-nio-8080-exec-2] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at, role, head_photo, head_photo_update_time
+2026-01-22 00:30:09.392 [http-nio-8080-exec-2] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$RBkPl4b5rBXyhO.x20Rdmu6gMgMAcRUoBbBO3cfWbeuewMPsnVPrO, 2025-12-25 22:48:35, 3, https://task-system-jacolp.oss-cn-beijing.aliyuncs.com/2026/01/b0d3fc1a-2dea-4fd0-8e03-479fa16f52d7.jpg, 2026/01
+2026-01-22 00:30:09.393 [http-nio-8080-exec-2] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-22 00:30:09.400 [http-nio-8080-exec-2] INFO  c.j.task_system.filter.JwtAuthenticationFilter - Token is valid! -- √
+2026-01-22 00:30:23.337 [http-nio-8080-exec-2] WARN  com.jacolp.task_system.aop.OperationLogAspect - 用户ID已从ThreadLocal中获取，但可能存在问题！其值为：1
+2026-01-22 00:30:26.642 [http-nio-8080-exec-2] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==>  Preparing: SELECT * FROM user WHERE username = ?
+2026-01-22 00:30:26.643 [http-nio-8080-exec-2] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - ==> Parameters: admin(String)
+2026-01-22 00:30:26.645 [http-nio-8080-exec-2] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==    Columns: id, username, password, created_at, role, head_photo, head_photo_update_time
+2026-01-22 00:30:26.646 [http-nio-8080-exec-2] TRACE c.j.task_system.mapper.UserMapper.findByUsername - <==        Row: 1, admin, $2a$10$RBkPl4b5rBXyhO.x20Rdmu6gMgMAcRUoBbBO3cfWbeuewMPsnVPrO, 2025-12-25 22:48:35, 3, https://task-system-jacolp.oss-cn-beijing.aliyuncs.com/2026/01/b0d3fc1a-2dea-4fd0-8e03-479fa16f52d7.jpg, 2026/01
+2026-01-22 00:30:26.647 [http-nio-8080-exec-2] DEBUG c.j.task_system.mapper.UserMapper.findByUsername - <==      Total: 1
+2026-01-22 00:30:26.648 [http-nio-8080-exec-2] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==>  Preparing: select * from player_status where user_id=?
+2026-01-22 00:30:26.648 [http-nio-8080-exec-2] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - ==> Parameters: 1(Long)
+2026-01-22 00:30:26.655 [http-nio-8080-exec-2] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==    Columns: id, spirit, body, current_exp, total_exp, level, update_time, user_id, coin
+2026-01-22 00:30:26.656 [http-nio-8080-exec-2] TRACE c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==        Row: 1, 2, 6, 100, 250, 3, 2026-01-15 14:35:41, 1, 30
+2026-01-22 00:30:26.657 [http-nio-8080-exec-2] DEBUG c.j.t.mapper.PlayerStatusMapper.selectByUserId - <==      Total: 1
+2026-01-22 00:30:26.714 [http-nio-8080-exec-2] DEBUG c.j.t.mapper.TaskMapper.selectByUserId_COUNT - ==>  Preparing: SELECT count(0) FROM task WHERE user_id = ?
+2026-01-22 00:30:26.715 [http-nio-8080-exec-2] DEBUG c.j.t.mapper.TaskMapper.selectByUserId_COUNT - ==> Parameters: 1(Long)
+2026-01-22 00:30:26.718 [http-nio-8080-exec-2] TRACE c.j.t.mapper.TaskMapper.selectByUserId_COUNT - <==    Columns: count(0)
+2026-01-22 00:30:26.719 [http-nio-8080-exec-2] TRACE c.j.t.mapper.TaskMapper.selectByUserId_COUNT - <==        Row: 2
+2026-01-22 00:30:26.720 [http-nio-8080-exec-2] DEBUG c.j.t.mapper.TaskMapper.selectByUserId_COUNT - <==      Total: 1
+2026-01-22 00:30:26.725 [http-nio-8080-exec-2] DEBUG c.j.task_system.mapper.TaskMapper.selectByUserId - ==>  Preparing: select * from task where user_id = ? order by create_time desc LIMIT ?
+2026-01-22 00:30:26.726 [http-nio-8080-exec-2] DEBUG c.j.task_system.mapper.TaskMapper.selectByUserId - ==> Parameters: 1(Long), 5(Integer)
+2026-01-22 00:30:26.730 [http-nio-8080-exec-2] TRACE c.j.task_system.mapper.TaskMapper.selectByUserId - <==    Columns: id, title, description, exp_reward, reward_type, reward, status, create_time, user_id, coin_reward
+2026-01-22 00:30:26.731 [http-nio-8080-exec-2] TRACE c.j.task_system.mapper.TaskMapper.selectByUserId - <==        Row: 3, 购买测试, <<BLOB>>, 20, 0, 0, 1, 2026-01-14 14:25:41, 1, 0
+2026-01-22 00:30:26.734 [http-nio-8080-exec-2] TRACE c.j.task_system.mapper.TaskMapper.selectByUserId - <==        Row: 1, 深蹲测试, <<BLOB>>, 30, 1, 5, 1, 2025-12-24 17:24:06, 1, 0
+2026-01-22 00:30:26.739 [http-nio-8080-exec-2] DEBUG c.j.task_system.mapper.TaskMapper.selectByUserId - <==      Total: 2
+2026-01-22 00:30:26.777 [http-nio-8080-exec-2] DEBUG c.j.task_system.mapper.OperationLogMapper.insert - ==>  Preparing: insert into operation_log(user_id, time, class_name, method_name, params, return_value, exception, cost_time) values (?, ?, ?, ?, ?, ?, ?, ?)
+2026-01-22 00:30:26.782 [http-nio-8080-exec-2] DEBUG c.j.task_system.mapper.OperationLogMapper.insert - ==> Parameters: 1(Long), 2026-01-22 00:30:24.984(Timestamp), com.jacolp.task_system.controller.TaskController(String), getTaskList(String), [1, 5](String), <200 OK OK,PageResult(total=2, rows=Page{count=true, pageNum=1, pageSize=5, startRow=0, endRow=5, total=2, pages=1, reasonable=false, pageSizeZero=false}[Task(id=3, title=购买测试, description=, expReward=20, rewardType=0, reward=0, status=1, createTime=Wed Jan 14 14:25:41 CST 2026, userId=1, coinReward=0), Task(id=1, title=深蹲测试, description=null, expReward=30, rewardType=1, reward=5, status=1, createTime=Wed Dec 24 17:24:06 CST 2025, userId=1, coinReward=0)]),[]>(String), null, 104(Long)
+2026-01-22 00:30:26.803 [http-nio-8080-exec-2] DEBUG c.j.task_system.mapper.OperationLogMapper.insert - <==    Updates: 1
+2026-01-22 00:31:01.403 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-22 00:31:01.410 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

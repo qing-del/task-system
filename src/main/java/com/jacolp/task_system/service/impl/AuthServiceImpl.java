@@ -39,7 +39,8 @@ public class AuthServiceImpl implements AuthService {
         // 2. 代码走到这里说明通过了认证
         // 生成 Token
         log.info("The user logged in successfully!");
-        return jwtUtil.generateToken(username);
+        Long userId = userMapper.findByUsername(username).getId();
+        return jwtUtil.generateToken(username, userId);
     }
 
     /**

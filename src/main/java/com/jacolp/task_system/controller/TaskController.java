@@ -1,12 +1,11 @@
 package com.jacolp.task_system.controller;
 
+import com.jacolp.task_system.anno.MethodLog;
 import com.jacolp.task_system.dto.InfoResponse;
 import com.jacolp.task_system.dto.PageResult;
 import com.jacolp.task_system.entity.PlayerStatus;
 import com.jacolp.task_system.entity.Task;
 import com.jacolp.task_system.exception.TaskException;
-import com.jacolp.task_system.mapper.PlayerStatusMapper;
-import com.jacolp.task_system.mapper.TaskMapper;
 import com.jacolp.task_system.service.AiTaskService;
 import com.jacolp.task_system.service.PlayerStatusService;
 import com.jacolp.task_system.service.TaskService;
@@ -20,7 +19,6 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/task")
 @CrossOrigin("*")   // 允许跨域请求
 public class TaskController {
-//    static final int TASK_STATUS_NOT_COMPLETE = 0;  // 定义任务未完成的状态码
 
     @Autowired private TaskService taskService;
     @Autowired private AiTaskService aiTaskService;
@@ -29,30 +27,13 @@ public class TaskController {
     public TaskController() {
         log.info("TaskController 初始化");
     }
-//    @Autowired private TaskMapper taskMapper;
-//    @Autowired private UserMapper userMapper;   // 需要引入这个来查 ID
-
-//    /**
-//     * 完成任务接口（Jwt之前的不安全版本）
-//     * \@param playerId 玩家id
-//     * @param taskId 任务id
-//     * @return 是否完成成功
-//     */
-//    /*@PostMapping("/complete")
-//    public PlayerStatus completeTask(@RequestParam Long playerId, @RequestParam Long taskId) {
-//        // 1. 调用 Service 逻辑
-//        boolean result = taskService.completeTask(playerId, taskId);
-//
-//        // 2. 返回是否提交成功
-//        return playerStatusMapper.selectById(playerId);
-//    }
-//    */
 
     /**
      * 完成任务接口
      * @param taskId 传入任务id
      * @return 返回最新的玩家状态表
      */
+    @MethodLog
     @PostMapping("/complete")
     public ResponseEntity<PlayerStatus> completeTask(@RequestParam Long taskId) {
         PlayerStatus player = playerStatusService.getCurrentPlayerStatus();
@@ -62,27 +43,11 @@ public class TaskController {
         return ResponseEntity.ok(playerStatusService.selectByUserId(player.getUserId()));
     }
 
-//    /*@PostMapping("/generate")
-//    public Task generateAiTask(@RequestParam Long playerId) {
-//        // 1. 查玩家状态
-//        PlayerStatus player = playerStatusMapper.selectById(playerId);
-//
-//        // 2. 呼叫 AI 生成任务
-//        Task newTask = aiTaskService.generateTask(player);
-//
-//        if (newTask != null) {
-//            // 3. 补全默认字段并村务数据库
-//            newTask.setStatus(TASK_STATUS_NOT_COMPLETE);
-//            taskMapper.insert(newTask);
-//            return newTask;
-//        }
-//        return null;
-//    }*/
-
     /**
      * 生成 AI 任务
      * @return 返回生成的任务
      */
+    @MethodLog
     @PostMapping("/generate")
     public ResponseEntity<Task> generateAiTask() {
         PlayerStatus status = playerStatusService.getCurrentPlayerStatus(); // 自动识别
@@ -97,30 +62,12 @@ public class TaskController {
     }
 
     /**
-     * 获取玩家状态（Jwt之前的不安全版本）
-     * @param playerId 玩家id
-     * @return 玩家状态
-    @GetMapping("/status")
-    public PlayerStatus getStatus(@RequestParam Long playerId) {
-        return playerStatusMapper.selectById(playerId);
-    }
-    */
-
-//    /**
-//     * 获取玩家状态
-//     * @return 返回现在用户的玩家状态
-//     */
-//    @GetMapping("/status")
-//    public PlayerStatus getStatus() {
-//        return getCurrentPlayerStatus();
-//    }
-
-    /**
      * 获取玩家任务列表
      * @param pageNum 页码
      * @param pageSize 每页数量
      * @return 玩家任务列表
      */
+    @MethodLog
     @GetMapping("/taskList")
     public ResponseEntity<PageResult<Task>> getTaskList(@RequestParam int pageNum, @RequestParam int pageSize) {
         PlayerStatus status = playerStatusService.getCurrentPlayerStatus();
@@ -133,6 +80,7 @@ public class TaskController {
      * @param task 任务
      * @return 创建结果
      */
+    @MethodLog
     @PostMapping("/create")
     public ResponseEntity<String> createTask(@RequestBody Task task) {
         task.setUserId(playerStatusService.getCurrentPlayerStatus().getUserId());
@@ -147,6 +95,7 @@ public class TaskController {
      * @param pageSize 每页数量
      * @return 任务列表
      */
+    @MethodLog
     @PostMapping("/taskListByCondition")
     public ResponseEntity<PageResult<Task>> getTaskListByCondition(@RequestBody Task condition, @RequestParam int pageNum, @RequestParam int pageSize) {
         condition.setUserId(playerStatusService.getCurrentPlayerStatus().getUserId());
@@ -159,6 +108,7 @@ public class TaskController {
      * @param task 传入更新后的任务
      * @return
      */
+    @MethodLog
     @PutMapping("/update")
     public ResponseEntity<InfoResponse> updateTask(@RequestBody Task task) {
         task.setUserId(playerStatusService.getCurrentPlayerStatus().getUserId());
@@ -170,6 +120,7 @@ public class TaskController {
      * @param id 任务 id
      * @return 删除结果
      */
+    @MethodLog
     @DeleteMapping("/delete")
     public ResponseEntity<InfoResponse> deleteById(@RequestParam Long id) {
         return ResponseEntity.ok(taskService.deleteById(id));

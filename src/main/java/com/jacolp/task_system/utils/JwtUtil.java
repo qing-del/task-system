@@ -2,7 +2,6 @@ package com.jacolp.task_system.utils;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.stereotype.Component;
 
@@ -29,9 +28,10 @@ public class JwtUtil {
      * @param username 用户名
      * @return 加密后的 Token 字符串
      */
-    public String generateToken(String username) {
+    public String generateToken(String username, Long userId) {
         return Jwts.builder()
                 .setSubject(username)   // 设置主题 一般放置用户名
+                .claim("userId", userId)    // 设置 Claims 用于存放用户id
                 .setIssuedAt(new Date())    // 签发时间
                 .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))  // 过期时间
                 .signWith(SECRET_KEY)   // 签名
@@ -45,6 +45,15 @@ public class JwtUtil {
      */
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);
+    }
+
+    /**
+     * 从 Token 中提取用户id
+     * @param token Token 字符串
+     * @return 用户id
+     */
+    public Long extractUserId(String token) {
+        return extractClaim(token, claims -> claims.get("userId", Long.class));
     }
 
     /**
