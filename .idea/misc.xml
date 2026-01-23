@@ -8,6 +8,9 @@
         <option value="$PROJECT_DIR$/task-system/pom.xml" />
         <option value="$PROJECT_DIR$/aliyun-oss-spring-boot-starter/pom.xml" />
         <option value="$PROJECT_DIR$/aliyun-oss-spring-boot-autoconfigure/pom.xml" />
+        <option value="$PROJECT_DIR$/task-common/pom.xml" />
+        <option value="$PROJECT_DIR$/task-pojo/pom.xml" />
+        <option value="$PROJECT_DIR$/task-web/pom.xml" />
       </list>
     </option>
   </component>
