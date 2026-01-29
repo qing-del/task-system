@@ -31,11 +31,11 @@ public class UserController {
      */
     @PutMapping("/updateName")
     public ResponseEntity<InfoResponse> updateUsername(@RequestBody UserRequest userRequest) {
-        log.info("修改用户名！");
+        log.info("Change username!");
         // 从请求体中获取用户信息
         String origUsername = userRequest.getUsername();
         String newUsername = userRequest.getNewUsername();
-        log.info("用户名：{}，新用户名：{}", origUsername, newUsername);
+        log.info("User name: {}, New user name: {}", origUsername, newUsername);
         // 调用业务逻辑层
         return ResponseEntity.ok(userService.updateUsername(origUsername, newUsername));
     }
@@ -47,12 +47,12 @@ public class UserController {
      */
     @PutMapping("/updatePassword")
     public ResponseEntity<InfoResponse> updatePassword(@RequestBody UserRequest userRequest) {
-        log.info("修改密码！");
+        log.info("Change password!");
         // 从请求体中获取用户信息
         String username = userRequest.getUsername();
         String password = userRequest.getPassword();
         String newPassword = userRequest.getNewPassword();
-        log.info("用户名：{}，旧密码：{}，新密码：{}", username, password, newPassword);
+        log.info("Username: {}, Old password: {}, New password: {}", username, password, newPassword);
         // 调用业务逻辑层
         InfoResponse result = userService.updatePassword(username, password, newPassword);
         return ResponseEntity.ok(result);
@@ -65,8 +65,8 @@ public class UserController {
      */
     @GetMapping("/getInfo")
     public ResponseEntity<User> getUserInfo(String username) {
-        log.info("获取用户信息！");
-        log.info("用户名：{}", username);
+        log.info("Get user information!");
+        log.info("Username: {}", username);
         // 调用业务逻辑层
         User user = userService.getUserInfo(username);
         return ResponseEntity.ok(user);
@@ -78,8 +78,8 @@ public class UserController {
      */
     @PostMapping("/uploadAvatar")
     public ResponseEntity<String> uploadAvatar(MultipartFile file) {
-        log.info("上传头像！");
-        log.info("文件名：{}", file.getOriginalFilename());
+        log.info("Upload your avatar!");
+        log.info("File name: {}", file.getOriginalFilename());
         return ResponseEntity.ok(userService.uploadAvatar(file));
     }
 }

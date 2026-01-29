@@ -42,7 +42,7 @@ public class TaskServiceImpl implements TaskService {
         // 1. 获取任务信息
         Task task = taskMapper.selectById(taskId);
         if (task == null || task.getStatus() == TASK_STATUS_COMPLETE) {
-            log.warn("已完成的任务重复点击完成！");
+            log.warn("Repeatedly clicking \"complete\" for a task that has already been completed!");
             return false;  // 若是任务已完成直接返回
         }
 
@@ -63,7 +63,7 @@ public class TaskServiceImpl implements TaskService {
                 status.setBody(status.getBody() + task.getReward());
                 break;
             default:
-                log.error("出现任务非法奖励属性类型异常！");
+                log.error("An exception occurred in the task illegal reward attribute type!");
                 throw new TaskException("非法任务奖励点！");
         }
 
@@ -97,7 +97,7 @@ public class TaskServiceImpl implements TaskService {
     @Override
     public boolean insertTask(Task task) {
         if (task.getUserId() == null || task.getUserId() == 0) {
-            log.error("新任务空玩家异常！");
+            log.error("New mission: Unusual player behavior!");
             throw new TaskException("任务无效用户ID异常！");
         }
         task.setStatus(TASK_STATUS_NOT_COMPLETE);   // 设置兜底：将任务状态设置为未完成
@@ -128,13 +128,13 @@ public class TaskServiceImpl implements TaskService {
         // 1. 判断是否是一个合法的任务
         // 1.1 判断 id 是否合法
         if (task.getId() == null || task.getId() == 0) {
-            log.error("更新任务ID异常！");
+            log.error("The update task ID is abnormal!");
             throw new TaskException("任务ID异常！");
         }
 
         // 1.2 判断是否有归属玩家
         if (task.getUserId() == null || task.getUserId() == 0) {
-            log.error("更新任务归属玩家ID异常！");
+            log.error("The player ID associated with the update task is abnormal!");
             throw new TaskException("任务归属玩家ID异常！");
         }
 
@@ -147,7 +147,7 @@ public class TaskServiceImpl implements TaskService {
     public InfoResponse deleteById(Long id) {
         // 1. 检测 id 是否合法
         if (id == null || id == 0) {
-            log.error("删除任务ID异常！");
+            log.error("The task ID for deletion is abnormal!");
             throw new TaskException("任务ID异常！");
         }
 

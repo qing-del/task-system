@@ -1,0 +1,9 @@
+com\jacolp\task_system\entity\PlayerStatus.class
+com\jacolp\task_system\entity\Item.class
+com\jacolp\task_system\dto\LoginRequest.class
+com\jacolp\task_system\entity\User.class
+com\jacolp\task_system\dto\UserRequest.class
+com\jacolp\task_system\entity\OperationLog.class
+com\jacolp\task_system\dto\AuthResponse.class
+com\jacolp\task_system\dto\BuyRequest.class
+com\jacolp\task_system\entity\Task.class

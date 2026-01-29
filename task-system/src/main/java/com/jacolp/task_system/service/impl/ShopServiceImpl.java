@@ -61,7 +61,7 @@ public class ShopServiceImpl implements ShopService {
     @Override
     public boolean updateItem(Item item) {
         if (item.getId() == null || item.getId() == 0) {
-            log.error("更新物品时 出现非法 id 异常");
+            log.error("An illegal id exception occurred when updating items");
             throw new ItemException("非法物品ID异常！");
         }
         return shopMapper.update(item) > 0;
@@ -79,7 +79,7 @@ public class ShopServiceImpl implements ShopService {
         // 1. 检测有没有库存
         Item item = shopMapper.selectById(itemId);
         if (item.getStack() <= 0 && item.getStack() != -1) {
-            log.warn("物品已售罄！");
+            log.warn("The item is sold out!");
             return new InfoResponse(false, "物品已售罄！");
         }
 
@@ -90,7 +90,7 @@ public class ShopServiceImpl implements ShopService {
         switch (item.getCostType()) {
             case 0:
                 if (status.getTotalExp() < item.getCostValue()) {
-                    log.warn("玩家等级未解锁商品！");
+                    log.warn("The player's level has not unlocked the item!");
                     throw new ItemException("玩家等级未解锁商品！");
                 }
                 money = status.getCurrentExp();
@@ -105,13 +105,13 @@ public class ShopServiceImpl implements ShopService {
                 money = status.getCoin();
                 break;
             default:
-                log.error("非法商品价格类型！");
+                log.error("Invalid price type for the product!");
                 throw new ItemException("非法商品价格类型！");
         }
 
         // 2.2 检测玩家余额是否充足
         if (money < item.getCostValue()) {
-            log.warn("玩家余额不足！");
+            log.warn("The player's balance is insufficient!");
             return new InfoResponse(false, "玩家余额不足！");
         }
 
@@ -130,7 +130,7 @@ public class ShopServiceImpl implements ShopService {
                 status.setCoin(money - item.getCostValue());
                 break;
             default:
-                log.error("非法商品价格类型！");
+                log.error("Invalid price type for the product!");
                 throw new ItemException("非法商品价格类型！");
         }
 
@@ -149,14 +149,14 @@ public class ShopServiceImpl implements ShopService {
                 status.setBody((int)(status.getBody() + item.getEffectValue()));
                 break;
             default:
-                log.error("非法商品效果类型！");
+                log.error("Invalid product effect type!");
                 throw new ItemException("非法商品效果类型！");
         }
 
         // 3.2 更新玩家数据库
         int res1 = playerStatusMapper.updateStatus(status);
         if (res1 <= 0) {
-            log.error("更新玩家状态失败！");
+            log.error("Failed to update player status!");
             throw new ItemException("更新玩家状态失败！");
         }
 
@@ -165,7 +165,7 @@ public class ShopServiceImpl implements ShopService {
             item.setStack(item.getStack() - 1);
             int res2 = shopMapper.update(item);
             if (res2 <= 0) {
-                log.error("更新商品库存失败！");
+                log.error("Failed to update product inventory!");
                 throw new ItemException("更新商品库存失败！");
             }
         }

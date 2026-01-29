@@ -34,9 +34,11 @@ public class AuthController {
         String username = request.getUsername();
         String password = request.getPassword();
 
+        log.info("The user starts to register...");
+
         String result = authService.register(username, password);
 
-        log.info("用户注册成功！");
+        log.info("The user registered successfully!");
         return ResponseEntity.ok(result);
     }
 
@@ -50,6 +52,8 @@ public class AuthController {
         // 1. 先获取用户名和密码
         String username = request.getUsername();
         String password = request.getPassword();
+
+        log.info("The user starts to login...");
 
         // 2. 调用 AuthService 进行登录认证
         String token = authService.login(username, password);

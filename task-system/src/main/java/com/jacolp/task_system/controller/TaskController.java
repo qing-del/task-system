@@ -50,6 +50,7 @@ public class TaskController {
     @MethodLog
     @PostMapping("/generate")
     public ResponseEntity<Task> generateAiTask() {
+        log.info("Start calling AI generation task...");
         PlayerStatus status = playerStatusService.getCurrentPlayerStatus(); // 自动识别
 
         Task newTask = aiTaskService.generateTask(status);
@@ -58,6 +59,7 @@ public class TaskController {
             taskService.insertTask(newTask);
             return ResponseEntity.ok(newTask);
         }
+        log.error("Ai generates an empty task exception!");
         throw new TaskException("生成任务失败！");
     }
 
@@ -70,6 +72,7 @@ public class TaskController {
     @MethodLog
     @GetMapping("/taskList")
     public ResponseEntity<PageResult<Task>> getTaskList(@RequestParam int pageNum, @RequestParam int pageSize) {
+        log.info("Start retrieving the task list...");
         PlayerStatus status = playerStatusService.getCurrentPlayerStatus();
         PageResult<Task> result = taskService.getTaskList(status.getId(), pageNum, pageSize);
         return ResponseEntity.ok(result);
@@ -83,6 +86,8 @@ public class TaskController {
     @MethodLog
     @PostMapping("/create")
     public ResponseEntity<String> createTask(@RequestBody Task task) {
+        log.info("Start creating a task...");
+        log.info("Task title: {}", task.getTitle());
         task.setUserId(playerStatusService.getCurrentPlayerStatus().getUserId());
         boolean result =  taskService.insertTask(task);
         return result ? ResponseEntity.ok("任务创建成功！") : ResponseEntity.badRequest().body("任务创建失败！");
@@ -98,6 +103,7 @@ public class TaskController {
     @MethodLog
     @PostMapping("/taskListByCondition")
     public ResponseEntity<PageResult<Task>> getTaskListByCondition(@RequestBody Task condition, @RequestParam int pageNum, @RequestParam int pageSize) {
+        log.info("Conditional query task...");
         condition.setUserId(playerStatusService.getCurrentPlayerStatus().getUserId());
         PageResult<Task> result = taskService.getTaskListByCondition(condition, pageNum, pageSize);
         return ResponseEntity.ok(result);
@@ -111,6 +117,7 @@ public class TaskController {
     @MethodLog
     @PutMapping("/update")
     public ResponseEntity<InfoResponse> updateTask(@RequestBody Task task) {
+        log.info("Start updating task...");
         task.setUserId(playerStatusService.getCurrentPlayerStatus().getUserId());
         return ResponseEntity.ok(taskService.updateTask(task));
     }
@@ -123,6 +130,8 @@ public class TaskController {
     @MethodLog
     @DeleteMapping("/delete")
     public ResponseEntity<InfoResponse> deleteById(@RequestParam Long id) {
+        log.info("Start deleting task...");
+        log.info("deleting task id: {}", id);
         return ResponseEntity.ok(taskService.deleteById(id));
     }
 }

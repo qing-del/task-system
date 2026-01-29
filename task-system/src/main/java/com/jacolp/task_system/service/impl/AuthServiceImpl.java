@@ -54,7 +54,7 @@ public class AuthServiceImpl implements AuthService {
         // 1. 检查用户是否存在
         if(userMapper.countByUsername(username) > 0) {
             log.error("The user already exists!");
-            throw new AuthRuntimeException("The user already exists!");
+            throw new AuthRuntimeException("用户已存在！");
         }
 
         // 2. 创建新用户对象
@@ -69,9 +69,9 @@ public class AuthServiceImpl implements AuthService {
         boolean result = userMapper.insert(user) > 0;
         if (!result) {
             log.error("User registration failed!");
-            throw new AuthRuntimeException("User registration failed!");
+            throw new AuthRuntimeException("用户注册失败！");
         }
         log.info("User registration success!");
-        return "User registration success!";
+        return "用户注册成功！";
     }
 }

@@ -1,2 +1,11 @@
-E:\JavaProject\task-system-parent\task-common\src\main\java\com\jacolp\task_system\dto\PageResult.java
 E:\JavaProject\task-system-parent\task-common\src\main\java\com\jacolp\task_system\dto\InfoResponse.java
+E:\JavaProject\task-system-parent\task-common\src\main\java\com\jacolp\task_system\dto\PageResult.java
+E:\JavaProject\task-system-parent\task-common\src\main\java\com\jacolp\task_system\exception\AuthRuntimeException.java
+E:\JavaProject\task-system-parent\task-common\src\main\java\com\jacolp\task_system\exception\GlobalExceptionHandler.java
+E:\JavaProject\task-system-parent\task-common\src\main\java\com\jacolp\task_system\exception\ItemException.java
+E:\JavaProject\task-system-parent\task-common\src\main\java\com\jacolp\task_system\exception\TaskException.java
+E:\JavaProject\task-system-parent\task-common\src\main\java\com\jacolp\task_system\exception\UserException.java
+E:\JavaProject\task-system-parent\task-common\src\main\java\com\jacolp\task_system\filter\JwtAuthenticationFilter.java
+E:\JavaProject\task-system-parent\task-common\src\main\java\com\jacolp\task_system\utils\CurrentUserIdHolder.java
+E:\JavaProject\task-system-parent\task-common\src\main\java\com\jacolp\task_system\utils\JwtUtil.java
+E:\JavaProject\task-system-parent\task-common\src\main\java\com\jacolp\task_system\utils\SecurityUtil.java

@@ -44,7 +44,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
             // 2. 检查头格式：必须以 "Bearer " 开头
             if (authHeader == null || !authHeader.startsWith("Bearer ")) {
-                log.warn("请求头不合法导致异常！");
+                log.warn("The request header is invalid, resulting in an exception!");
                 filterChain.doFilter(request, response); // 不符合格式直接放行（交给后续 SecurityConfig 拦截）
                 return;
             }
@@ -55,7 +55,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
             // 提取 Token 中的用户id
             userId = jwtUtil.extractUserId(jwt);
-            log.info("用户id：{}", userId);
+            log.info("User ID: {}", userId);
             CurrentUserIdHolder.setCurrentUserId(userId);   // 后续记得清除防止内存泄漏
 
             // 4. 如果有用户名且当前未登录（SecurityContext 为空）
@@ -84,7 +84,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             filterChain.doFilter(request, response);
 
         } catch (ServletException | IOException e) {
-            log.error("JWT 过滤器发生异常：{}", e.getMessage());
+            log.error("An exception occurred in the JWT filter: {}", e.getMessage());
             throw e;
         } finally {
             // 8.清除线程变量

@@ -44,7 +44,7 @@ public class OperationLogAspect {
         // 判断userId是否存在异常
         Long userId = CurrentUserIdHolder.getCurrentUserId();
         if (userId == null) {
-            log.warn("用户ID已从ThreadLocal中获取，但可能存在问题！其值为：{}", userId);
+            log.warn("The user ID has been obtained from ThreadLocal, but there may be an issue! Its value is: {}", userId);
         }
         opLog.setUserId(userId);
         opLog.setTime(new Date());
@@ -77,7 +77,7 @@ public class OperationLogAspect {
             if (opLog.getException() == null) {
                 operationLogMapper.insert(opLog);
             }
-            log.info("成功记录操作日志：{}", opLog);
+            log.info("Successfully recorded operation log: {}", opLog);
         }
     }
 

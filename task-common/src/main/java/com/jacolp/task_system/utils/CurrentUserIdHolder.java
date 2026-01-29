@@ -9,7 +9,7 @@ public class CurrentUserIdHolder {
     public static void setCurrentUserId(Long userId) {
         // 允许设置null，但记录警告
         if (userId == null) {
-            log.warn("尝试设置null用户ID，这可能导致后续逻辑错误");
+            log.warn("Attempting to set a null user ID may lead to subsequent logic errors");
         }
         CURRENT_USER_ID.set(userId);
     }
@@ -17,7 +17,7 @@ public class CurrentUserIdHolder {
     public static Long getCurrentUserId() {
         Long userId = CURRENT_USER_ID.get();
         if (userId == null) {
-            log.debug("当前线程没有设置用户ID");
+            log.debug("The current thread has not set a user ID");
         }
         return userId;
     }

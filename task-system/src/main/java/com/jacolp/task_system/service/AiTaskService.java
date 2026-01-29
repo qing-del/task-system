@@ -7,6 +7,7 @@ import com.jacolp.task_system.entity.PlayerStatus;
 import com.jacolp.task_system.entity.Task;
 import com.jacolp.task_system.mapper.TaskMapper;
 import com.jacolp.task_system.service.impl.TaskServiceImpl;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -19,9 +20,10 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Slf4j
 @Service
 public class AiTaskService {
-    static final  int TASK_STATUS_COMPLETE = 1;
+    static final int TASK_STATUS_COMPLETE = 1;
 
     @Value("${ai.deepseek.api-key}")
     private String apiKey;
@@ -43,7 +45,7 @@ public class AiTaskService {
      */
     public Task generateTask(PlayerStatus player) {
         // 测试连接是否成功
-        System.out.println("正在尝试连接地址: " + apiUrl);
+        log.info("Trying to connect to the address: " + apiUrl);
         try {
             Task condition = new Task();
             condition.setUserId(player.getUserId());
@@ -67,14 +69,7 @@ public class AiTaskService {
                 historyTaskStr = "无 / 新玩家";
             }
 
-            // 1. 构造 Prompt (提示词) - 这是核心！
-            // 我们要求 AI 必须返回纯 JSON，不要废话
-//            String prompt = String.format(
-//                    "你是一个游戏系统。玩家当前状态：等级%d，精神%d，肉体%d。请根据他的短板生成一个现实生活中可执行的锻炼任务。\n" +
-//                            "要求返回标准JSON格式，不要包含Markdown标记（如 ```json），格式如下：\n" +
-//                            "{\"title\": \"任务标题\", \"description\": \"任务描述\", \"expReward\": 经验值(整数), \"rewardType\": 奖励类型(0精神/1肉体), \"reward\": 属性点(整数)}",
-//                    player.getLevel(), player.getSpirit(), player.getBody()
-//            );
+            // 1. 构建提示词
             String prompt = String.format("""
                 你是一个游戏化人生系统的 GM。
                 
@@ -98,10 +93,11 @@ public class AiTaskService {
                     "title": "晨跑3公里",
                     "description": "穿上跑鞋，去公园慢跑3公里，感受清晨的空气。",
                     "expReward": 15,
-                    "rewardType": "body",
+                    "rewardType": "1",
                     "reward": 1,
                     "coinReward": 10
                 }
+                对于 rewardType -- 0:精神(spirit)，1:肉体(body)
                 """,
                     player.getLevel(), player.getSpirit(), player.getBody(), historyTaskStr
             );
@@ -137,13 +133,14 @@ public class AiTaskService {
                 // DeepSeek 返回的结构是 nested 的，我们需要扒开洋葱皮
                 // response -> choices[0] -> message -> content
                 String responseBody = response.body();
+                log.info("Ai generated task: {}", responseBody);    // 打印日志
                 ObjectNode jsonResponse = (ObjectNode) objectMapper.readTree(responseBody);
                 String content = jsonResponse.get("choices").get(0).get("message").get("content").asText();
 
                 // 把 AI 返回的 content (纯JSON字符串) 转成 Task 对象
                 return objectMapper.readValue(content, Task.class);
             } else {
-                System.err.println("AI 请求失败: " + response.body());
+                log.error("AI request failed: " + response.body());
                 return null;
             }
 
